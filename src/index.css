@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+}
+
+::selection{
+  background-color: #bb5502;
+  color: #ffffff;
+}
+.bg-image{
+  background-image: url('./assets//dots.png');
+  background-size:auto;
+}
+
+.logos{
+  animation: slideright 60s linear infinite;
+}
+
+
+.gradient-text {
+  background: linear-gradient(93.93deg, #E01066 4.77%, #060660 40.89%, #0C0CC6 62.56%);
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent to show gradient */
+  background-clip: text; /* For non-webkit browsers */
+  color: transparent; /* Ensure text is transparent to only show the gradient */
+  /* Optional: Center text alignment */
+}
+
+@keyframes slideright {
+  0% {
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "Montserrat";
+    src: url(./Fonts/Montserrat-Regular.ttf)
+  }
+  @font-face {
+    font-family: "Montserrat-thin";
+    src: url(./Fonts/Montserrat-Thin.ttf)
+  }
+}
