@@ -19,7 +19,7 @@ const ProudWorks = () => {
         <div className=' border-spacing-3 border-opacity-10 border border-grey py-2 px-5 w-fit mx-auto rounded-full ' > Work That Make Us Proud</div>
       </AttentionSeeker>
       <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center my-10 ' >Recent Works, AI-centered.</div>
-      <div className='flex flex-col lg:flex-row gap-10 lg:h-[500px] my-20 transition-all ease-in-out duration-700 ' >
+      <div className='flex flex-col-reverse lg:flex-row gap-10 lg:h-[500px] my-20 transition-all ease-in-out duration-700 ' >
         <div className='lg:w-[50%] mx-auto ' >
           {Works.map((data, index) => (
           <div className={`${data.imgsrc === imgSrc? 'border-l-orange border-l border-b h-[200px] ' : 'h-[80px] ' } overflow-hidden cursor-pointer pt-10 pb-20 `} onClick={() => { setImgSrc(data.imgsrc) }} key={index} >
