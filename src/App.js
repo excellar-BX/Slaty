@@ -30,7 +30,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/waitlist" element={<Waitlist/>} />
+          <Route path="/waitlist" element={<div id="getWaitlistContainer" data-waitlist_id="23177" data-widget_type="WIDGET_1"></div>} />
         </Routes>
       </Router>
       <Faq/>
