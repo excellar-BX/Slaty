@@ -30,7 +30,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/waitlist" element={<div id="getWaitlistContainer" data-waitlist_id="23177" data-widget_type="WIDGET_1"></div>} />
+          <Route path="/waitlist" element={<div id="getWaitlistContainer" data-waitlist_id="23177" data-widget_type="WIDGET_1"></div>
+  <link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"/>
+  <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
+    } />
         </Routes>
       </Router>
       <Faq/>
