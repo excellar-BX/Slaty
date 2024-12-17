@@ -1,7 +1,4 @@
 import React from 'react'
-import "https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"
-import "https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"
-
 
 const Waitlist = () => {
   return (
