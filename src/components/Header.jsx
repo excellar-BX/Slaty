@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div className='flex w-full sm:max-w-[90%] text-white mx-auto pt-5 mb-5 justify-center  ' >
     <div className='flex items-center z-[1000] justify-between fixed rounded-full bg-black  py-5 px-10 w-[95%] sm:max-w-[75%] border-spacing-3 border-opacity-10 border border-grey ' >
-        <a href="/"><div className='min-w-[20%] text-orange tracking-widest text-lg sm:text:2xl xl:text-3xl font-bold cursor-pointer ' >Slaty</div></a>
+        <a href="/"><div className='min-w-[20%] text-orange tracking-widest text-xl sm:text:2xl xl:text-3xl font-bold cursor-pointer ' >Slaty</div></a>
        
         <nav className={` ${navOpen? 'scale-100 xl:scale-100' : 'xl:scale-100 scale-0'} transition-all flex ease-in-out duration-700 flex-1 xl:flex-row flex-col  items-center xl:bg-opacity-0 xl:static absolute top-20 xl:py-0 py-10 rounded-2xl right-6 bg-orange xl:max-w-auto w-[250px] xl:h-auto h-[400px] text-center text-xl justify-between  `}>
           <div className='w-10 h-10 rounded-md rotate-45 xl:hidden bg-orange absolute right-2 -top-3 ' ></div>
