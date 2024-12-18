@@ -7,22 +7,22 @@ import pic3 from '../assets/dots.png'
 const ProudWorks = () => {
 
   const Works = [
-    { title: 'AirMedia', description: 'Helping businesses automate and optimise their social media presence effortlessly.', summary:'AI Assistant for Social Media', imgsrc: pic1 },
-    { title: 'Lyzis Labs', description: 'A secure, decentralised platform connecting buyers and sellers in the luxury watch market.', summary:'Web3-Based Watch Marketplace', imgsrc: pic2 },
-    { title: 'FieldHawk', description: 'Empowering farmers with actionable insights and automation to enhance productivity and efficiency.', summary:'AI-Powered Analytics for Farmers', imgsrc: pic3 },
+    { title: 'Term Paper', description: 'A detailed academic essay that involves research on a specific topic, demonstrating understanding through structured arguments, analysis, and proper citations.', summary:'A topic research feature', imgsrc: pic1 },
+    { title: 'Book Review', description: 'A critical analysis of a book, summarizing its content, themes, and evaluating its strengths and weaknesses, offering recommendations to potential readers.', summary:'A critical analytic tool for books', imgsrc: pic2 },
+    { title: 'Project Writing', description: "A structured report outlining a project's research, methodology, analysis, and conclusions, often with data and recommendations.", summary:" Report for outlining a project's research", imgsrc: pic3 },
   ]
   const [imgSrc, setImgSrc] = useState(pic1)
 
   return (
     <div id='works' className='text-white' >
       <AttentionSeeker duration={2000} triggerOnce>
-        <div className=' border-spacing-3 border-opacity-10 border border-grey py-2 px-5 w-fit mx-auto rounded-full ' > Work That Make Us Proud</div>
+        <div className=' border-spacing-3 border-opacity-10 border border-grey py-2 px-5 w-fit mx-auto rounded-full ' > Literary writings</div>
       </AttentionSeeker>
-      <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center my-10 ' >Recent Works, AI-centered.</div>
-      <div className='flex flex-col-reverse lg:flex-row gap-10 lg:h-[500px] my-20 transition-all ease-in-out duration-700 ' >
+      <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center my-10 ' >Recent Features for Students.</div>
+      <div className='flex flex-col lg:flex-row gap-10 lg:h-[500px] my-20 transition-all ease-in-out duration-700 ' >
         <div className='lg:w-[50%] mx-auto ' >
           {Works.map((data, index) => (
-          <div className={`${data.imgsrc === imgSrc? 'border-l-orange border-l border-b h-[200px] ' : 'h-[80px] ' } overflow-hidden cursor-pointer pt-10 pb-20 `} onClick={() => { setImgSrc(data.imgsrc) }} key={index} >
+          <div className={`${data.imgsrc === imgSrc? 'border-l-orange border-l border-b h-fit pb-5 ' : 'h-[80px] ' } overflow-hidden cursor-pointer pt-10 pb-20 `} onClick={() => { setImgSrc(data.imgsrc) }} key={index} >
             <div className="details mx-5 sm:mx-10 ">
               <div className={`flex ${data.imgsrc === imgSrc && 'justify-between items-center '} justify-normal items-baseline  `} >
               <div className={`${data.imgsrc === imgSrc ? 'mb-0 ' : 'mb-28'} w-fit text-xl sm:text-3xl font-bold`} >{data.title}</div>

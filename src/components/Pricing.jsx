@@ -31,10 +31,10 @@ const Pricing = () => {
       <div className=' border-spacing-3 border-opacity-10 border border-grey py-2 px-5 w-fit mx-auto rounded-full ' > Simple Pricing</div>
       </AttentionSeeker>
       <Fade duration={3000} >
-      <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center leading-relaxed my-10 w-fit mx-auto ' >Simple Plans for Ambitious Ideas</div>
+      <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center leading-relaxed my-10 w-fit mx-auto ' >Simple Plans for Ambitious Leaders</div>
       </Fade>
       <Fade direction='up' duration={2000} triggerOnce >
-      <div className="pricing-filter flex flex-col sm:flex-row h-fit items-center justify-around bg-white bg-opacity-10 px-5 py-3 w-full lg:max-w-[50%] xl:max-w-[70%] mx-auto rounded-xl sm:rounded-full text-lg ">
+      <div className="pricing-filter flex flex-col sm:flex-row h-fit items-center justify-around bg-white bg-opacity-10  py-3 w-full lg:max-w-[50%] xl:max-w-[70%] mx-auto rounded-xl sm:rounded-full text-lg ">
         {filters.map((data, index) => (
           <div className={`flex items-center ${filterkey === data.key && 'bg-white bg-opacity-10'} cursor-pointer sm:my-0 my-4 py-1 px-5 rounded-full `} onClick={() => { setFilterKey(data.key) }} >
             {index === 0 ? <div className={`flex items-center py-2 ` } >{data.label}  <div className='bg-white text-web-orange-500 px-5 text-lg rounded-full mx-5 ' >Save 20%</div></div> : (data.label)}
