@@ -31,19 +31,7 @@ const Creators = () => {
           <div className=' mx-auto text-3xl sm:text-5xl rounded-lg my-3 p-2 text-white bg-[#3e9eb9] w-fit ' ><BiLogoLinkedin /></div>
           <div className='sm:text-xl text-white text-opacity-50 sm:my-5 ' >{data.title}</div>
           <div className='sm:text-xl min-w-[90%] max-w-[90%] text-white text-opacity-70 px-5 ' >
-          <TypeAnimation
-                 sequence={[
-                  data.review,
-                  1000,
-                  "   ",
-                  1000,
-                 ]}
-                 wrapper="span"
-                 speed={10}
-                 deletionSpeed={10}
-                 repeat={Infinity}
-                 style={{ marginLeft: "10px" }}
-               />
+          <div>{data.review}</div>
           </div>
         </div>
       ))}</Fade>
