@@ -41,7 +41,9 @@ const Services = () => {
         </Fade>
         
         
-        <div className='text-opacity-30 flex w-fit my-10 mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >  
+        
+      </div>
+      <div className='text-opacity-30 flex-wrap justify-center flex w-fit my-10 mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >  
         <Fade cascade triggerOnce damping={0.2} >
         <div className='mx-0.5 ' >Get </div>
         <div className='mx-0.5 ' >expert </div>
@@ -52,7 +54,6 @@ const Services = () => {
         <div className='mx-0.5 ' >it! </div>
         </Fade>
         </div>
-      </div>
     </div>
   )
 }
