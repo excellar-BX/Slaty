@@ -30,7 +30,7 @@ const Creators = () => {
           <div className='text-xl sm:text-2xl mt-5 sm:mt-10  ' >{data.name}</div>
           <div className=' mx-auto text-3xl sm:text-5xl rounded-lg my-3 p-2 text-white bg-[#3e9eb9] w-fit ' ><BiLogoLinkedin /></div>
           <div className='sm:text-xl text-white text-opacity-50 sm:my-5 ' >{data.title}</div>
-          <div className='sm:text-xl min-w-[90%] text-white text-opacity-70 px-5 ' >
+          <div className='sm:text-xl min-w-[90%] max-w-[90%] text-white text-opacity-70 px-5 ' >
           <TypeAnimation
                  sequence={[
                   data.review,
