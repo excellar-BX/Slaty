@@ -20,7 +20,7 @@ const Services = () => {
       <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center my-10 ' >Build. Research. Succeed.</div>
       <div className='text-opacity-30 w-fit mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >Sign up today to start tutoring and earning!</div>
       </Fade>
-      <div className="card grid sm:grid-cols-2 xl:grid-cols-3 items-center justify-center gap-10 my-20 ">
+      <div className="card grid sm:grid-cols-2 xl:grid-cols-3 items-center justify-center place-items-center gap-10 my-20 ">
         <Fade duration={2000} direction='up' damping={0.3} triggerOnce cascade > 
         {Cards.map((data, index) => (
           <div key={index} className='sm:h-[400px] h-[350px] border-spacing-3 relative overflow-hidden border-opacity-10 border border-grey rounded-xl p-10 w-[300px] mx-auto lg:w-[380px] sm:w-[400px] justify-center items-center bg-white bg-opacity-5 ' >
