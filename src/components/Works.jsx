@@ -26,7 +26,7 @@ const Works = () => {
       <div className='text-opacity-30 w-fit mx-auto sm:text-xl text-center max-w-[600px] text-white ' >Slaty helps you track deadlines, set goals, and build habits to stay ahead. Simplify your studies and excel with ease!
       </div>
       </Fade>
-      <div className="card grid sm:grid-cols-2 xl:grid-cols-3 items-center justify-center place-items-center gap-10 my-20 ">
+      <div className="card flex flex-wrap items-center justify-center gap-10 my-20 ">
         <Fade duration={2000} direction='up' damping={0.3} triggerOnce cascade > 
         {Cards.map((data, index) => (
           <div key={index} className='sm:h-[450px] h-[400px] border-spacing-3 relative overflow-hidden border-opacity-10 border border-grey rounded-xl p-10 w-[300px] mx-auto lg:w-[380px] sm:w-[400px] justify-center items-center bg-white bg-opacity-5 ' >
