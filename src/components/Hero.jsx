@@ -28,11 +28,11 @@ const Hero = () => {
 
       <div className=' flex justify-center items-center text-xl sm:text-4xl  xl:text-6xl font-bold ' >It's <span className='text-orange mx-4 my-8 ' >{month} {day.toString().padStart(2, 0)}</span></div>
       <div className='flex xl:text-7xl sm:text-5xl text-2xl justify-center items-center' >Your Idea <span className='animate-spin ' > ✦ </span> Is Reality </div>
-      <div className=' flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-40 max-w-[500px] text-center mx-auto '  >Join the waitlist today and recieve a free personalized study guide tailored to your academic needs</div>
+      <div className=' flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-70 max-w-[500px] text-center mx-auto '  >Join the waitlist today and recieve a free personalized study guide tailored to your academic needs</div>
       <Link to='/waitlist' >
       <div className='flex justify-center px-5 sm:px-10 py-3 sm:py-5 sm:text-xl mx-auto hover:bg-[#ff9e3d] hover:cursor-pointer items-center mt-10 sm:mt-20  border-spacing-3 border-opacity-10 border border-grey  bg-orange rounded-lg w-fit animate-bounce ' >Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -rotate-45' /> </div>
       </Link>
-      <div className=' w-fit mt-10 sm:mt-28 mx-auto text-white text-center sm:text-xl text-opacity-30  ' >Building the Future, One Platform at a Time</div>
+      <div className=' w-fit mt-10 sm:mt-28 mx-auto text-white text-center sm:text-xl text-opacity-70  ' >Building the Future, One Platform at a Time</div>
       </Fade>
       <div className="wrapper sm:text-xl overflow-hidden font-bold flex w-full ">
         <div className="logos flex justify-around even:text-orange h-20 text-white my-5 sm:my-10  "> 
