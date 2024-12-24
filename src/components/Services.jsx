@@ -26,7 +26,7 @@ const Services = () => {
           <div key={index} className='sm:h-[400px] h-[350px] border-spacing-3 relative overflow-hidden border-opacity-10 border border-grey rounded-xl p-10 w-[300px] mx-auto lg:w-[380px] sm:w-[400px] justify-center items-center bg-white bg-opacity-5 ' >
             <div className='text-center text-2xl sm:text-3xl font-bold  mb-5 ' >{data.title}</div>
             <div className={`  w-20 h-20 absolute blur-[90px] mx-auto -top-[20%] left-[30%] bg-white `}  ></div>
-            <div className='text-white text-sm sm:text-lg text-opacity-30 h-[50%] flex items-baseline text-center sm:mt-5 ' >{data.info}</div>
+            <div className='text-white text-sm sm:text-lg text-opacity-70 h-[50%] flex items-baseline text-center sm:mt-5 ' >{data.info}</div>
           </div>
         ))}
         </Fade>
