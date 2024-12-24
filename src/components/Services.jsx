@@ -18,7 +18,7 @@ const Services = () => {
       </AttentionSeeker>  
       <Fade triggerOnce cascade duration={1500} damping={0.2} direction='up' >
       <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center my-10 ' >Build. Research. Succeed.</div>
-      <div className='text-opacity-30 w-fit mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >Sign up today to start tutoring and earning!</div>
+      <div className='text-opacity-70 w-fit mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >Sign up today to start tutoring and earning!</div>
       </Fade>
       <div className="card flex flex-wrap items-center justify-center gap-10 my-20 ">
         <Fade duration={2000} direction='up' damping={0.3} triggerOnce cascade > 
@@ -43,7 +43,7 @@ const Services = () => {
         
       </div>
       
-      <div className='text-opacity-30 flex-wrap justify-center flex w-fit my-10 mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >  
+      <div className='text-opacity-70 flex-wrap justify-center flex w-fit my-10 mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >  
         <Fade cascade triggerOnce damping={0.2} >
         <div className='mx-0.5 ' >Get </div>
         <div className='mx-0.5 ' >expert </div>
