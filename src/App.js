@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { PuffLoader } from "react-spinners";
 import Home from "./screens/Home";
-import Waitlist from "./screens/Waitlist";
+
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import TutorsWaitList from "./screens/TutorsWaitList";
+import StudentWaitList from "./screens/StudentWaitList";
+import Waitlist from "./screens/Waitlist";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -29,8 +32,11 @@ function App() {
       <Header/>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/waitlist" element={<Waitlist/>} />
+          <Route index element={<Home />} />
+          <Route path="/waitlist" element={<Waitlist/>} >
+          <Route path="tutors" element={<TutorsWaitList/>} />
+          <Route path="students" element={<StudentWaitList/>} />
+          </Route>
         </Routes>
       </Router>
       <Faq/>

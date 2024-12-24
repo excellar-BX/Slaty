@@ -26,12 +26,12 @@ const Creators = () => {
     <Fade cascade triggerOnce duration={2000} direction='left' damping={0.3} >
       {Cards.map((data, index)=>(
         <div key={index} className=' mx-auto text-center ' >
-        <div><img className='rounded-3xl  w-[90%] mx-auto sm:h-[600px]  ' src={data.img} alt="" /></div>
+        <div><img className='rounded-3xl  max-w-[90%] w-full mx-auto sm:h-[600px]  ' src={data.img} alt="" /></div>
           <div className='text-xl sm:text-2xl mt-5 sm:mt-10  ' >{data.name}</div>
           <div className=' mx-auto text-3xl sm:text-5xl rounded-lg my-3 p-2 text-white bg-[#3e9eb9] w-fit ' ><BiLogoLinkedin /></div>
           <div className='sm:text-xl text-white text-opacity-50 sm:my-5 ' >{data.title}</div>
-          <div className='sm:text-xl min-w-[90%] max-w-[90%] text-white text-opacity-70 px-5 ' >
-          <div>{data.review}</div>
+          <div className='sm:text-xl w-[90%] text-white text-opacity-70 px-5 ' >
+         <div>{data.review}</div>
           </div>
         </div>
       ))}</Fade>
