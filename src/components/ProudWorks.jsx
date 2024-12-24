@@ -26,8 +26,8 @@ const ProudWorks = () => {
             <div className="details mx-5 sm:mx-10 ">
               <div className={`flex ${data.imgsrc === imgSrc && 'justify-between items-center '} justify-normal items-baseline  `} >
               <div className={`${data.imgsrc === imgSrc ? 'mb-0 ' : 'mb-28'} w-fit text-xl sm:text-3xl font-bold`} >{data.title}</div>
-              <div className={`${data.imgsrc === imgSrc ? 'block' : 'hidden'} mx-5 text-white text-opacity-50 text-sm sm:text-lg `} >Try {data.title}</div>
-              <div className={`${data.imgsrc === imgSrc ? 'hidden' : 'block'} mx-2 sm:mx-10 text-white text-opacity-50 text-sm sm:text-lg `} >{data.summary}</div>
+              <div className={`${data.imgsrc === imgSrc ? 'block' : 'hidden'} mx-5 text-white text-opacity-70 text-sm sm:text-lg `} >Try {data.title}</div>
+              <div className={`${data.imgsrc === imgSrc ? 'hidden' : 'block'} mx-2 sm:mx-10 text-white text-opacity-70 text-sm sm:text-lg `} >{data.summary}</div>
             </div>
             <div className={`${data.imgsrc === imgSrc && 'h-20'} text-sm sm:text-xl mt-5 mb-10 sm:mb-20 text-white text-opacity-50 `} >{data.description}</div>
             </div>
