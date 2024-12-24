@@ -23,7 +23,7 @@ const Works = () => {
       <div className='xl:text-5xl sm:text-4xl text-2xl font-bold sm:max-w-[70%] text-center leading-relaxed my-10 w-fit mx-auto ' >Achieving academic success starts with staying organized and motivated.</div>
       </Rotate>
       <Fade direction='down' triggerOnce >
-      <div className='text-opacity-30 w-fit mx-auto sm:text-xl text-center max-w-[600px] text-white ' >Slaty helps you track deadlines, set goals, and build habits to stay ahead. Simplify your studies and excel with ease!
+      <div className='text-opacity-70 w-fit mx-auto sm:text-xl text-center max-w-[600px] text-white ' >Slaty helps you track deadlines, set goals, and build habits to stay ahead. Simplify your studies and excel with ease!
       </div>
       </Fade>
       <div className="card flex flex-wrap items-center justify-center gap-10 my-20 ">
