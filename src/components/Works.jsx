@@ -33,7 +33,7 @@ const Works = () => {
             <div className={`  w-20 h-20 absolute blur-[90px] mx-auto -top-[20%] left-[30%] bg-white `}  ></div>
             <div className=' h-[50%] border-spacing-3 border-opacity-10 border border-grey bg-black rounded-2xl mb-10 justify-center items-center flex ' ><div className='p-5 rounded-full text-xl sm:text-3xl bg-orange animate-bounce ' >{data.icon}</div></div>
             <div className='text-center text-2xl sm:text-3xl font-bold  my-2 ' >{data.title}</div>
-            <div className='text-white text-sm sm:text-lg text-opacity-30 text-center sm:mt-5 ' >{data.info}</div>
+            <div className='text-white text-sm sm:text-lg text-opacity-70 text-center sm:mt-5 ' >{data.info}</div>
           </div>
         ))}
         </Fade>
