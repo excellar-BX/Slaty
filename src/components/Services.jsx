@@ -9,7 +9,7 @@ const Services = () => {
     {title:'Vision Statement ', info:'To empower students to achieve academic success and personal growth by providing innovative tools, personalized support, and opportunities for learning and mentorship, fostering a community where everyone can thrive.  ',  },
     {title:'Live Classes', info:'With Slaty, a tutor is always available to support your academic needs. Access live, real-time classes anytime, and get personalized help to excel in your studies.', },
   ]
-  const CardsBtn = ["AI-Driven Platforms", "Research", "Marketplaces", "Data Insight", "Analytics", "Security", "Collaboration", "Maintenance"]
+  const CardsBtn = ["Personal Tutoring", "Research", "Term Paper", "Book Review", "Literary Writing", "Chatting", "Community"]
 
   return (
     <div className='text-white' >
