@@ -18,11 +18,13 @@ const Hero = () => {
     <div className='mx-auto  sm:w-[70%] pt-20 sm:pt-40 bg-5 sm:pb-20 bg-image text-white '  >
       <AttentionSeeker direction='down' triggerOnce >
         
-      <div className='flex bg-black w-fit py-3 items-center px-5 border-spacing-3 border-opacity-10  border-s border-t border-grey rounded-full mx-auto justify-center ' >
+        {/* <div className='flex bg-black w-fit py-3 items-center px-5 border-spacing-3 border-opacity-10  border-s border-t border-grey rounded-full mx-auto justify-center ' >
         <div className='w-5 h-5 flex items-center animate-pulse justify-center bg-malachite-600 bg-opacity-30 rounded-full ' ><div className='w-3 h-3 rounded-full bg-malachite-500  bg-opacity-50 animate-pulse ' ></div>
         </div>
         <div className='mx-2  xl:text-xl' >5 Spots Left</div>
-      </div>
+      </div>*/}
+        <div className='text-opacity-70 w-fit mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >Discover how slaty can help you get better grades</div>
+     
       </AttentionSeeker>
       <Fade direction='down' cascade triggerOnce  duration={3000} damping={0.2} >
 
