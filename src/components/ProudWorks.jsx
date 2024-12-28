@@ -33,9 +33,10 @@ const ProudWorks = () => {
             </div>
           </div>
         ))}</div>
+        {/*
         <Fade duration={2000} direction='right' className='h-full bg-grey bg-opacity-10 rounded-3xl lg:w-[40%] p-3 sm:p-10  border-spacing-3 border-opacity-10 border border-grey ' >
           <img className='h-full rounded-3xl w-full object-cover  border-spacing-3 border-opacity-10 border border-grey ' src={imgSrc} alt="" />
-          </Fade>
+          </Fade>*/}
       </div>
     </div>
   )
