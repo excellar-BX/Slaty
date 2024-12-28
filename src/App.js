@@ -39,7 +39,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
-      <Faq/>
+{/*<Faq/>*/}
       <Footer/>
     </div>
   );
