@@ -32,7 +32,17 @@ const Hero = () => {
       <Link to='/waitlist' >
       <div className='flex justify-center px-5 sm:px-10 py-3 sm:py-5 sm:text-xl mx-auto hover:bg-[#ff9e3d] hover:cursor-pointer items-center mt-10 sm:mt-20  border-spacing-3 border-opacity-10 border border-grey  bg-orange rounded-lg w-fit animate-bounce ' >Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -rotate-45' /> </div>
       </Link>
-      <div className=' w-fit mt-10 sm:mt-28 mx-auto text-white text-center sm:text-xl text-opacity-70  ' >Building the Future, One Platform at a Time</div>
+   <div className='text-opacity-70 flex-wrap justify-center flex w-fit my-10 mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >  
+        <Fade cascade triggerOnce damping={0.2} >
+        <div className='mx-0.5 ' >Get </div>
+        <div className='mx-0.5 ' >expert </div>
+        <div className='mx-0.5 ' >guidance </div>
+        <div className='mx-0.5 ' >whenever </div>
+        <div className='mx-0.5 ' >you </div>
+        <div className='mx-0.5 ' >need </div>
+        <div className='mx-0.5 ' >it! </div>
+        </Fade>
+        </div> 
       </Fade>
       <div className="wrapper sm:text-xl overflow-hidden font-bold flex w-full ">
         <div className="logos flex justify-around even:text-orange h-20 text-white my-5 sm:my-10  "> 
