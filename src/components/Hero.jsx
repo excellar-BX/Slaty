@@ -37,12 +37,13 @@ const Hero = () => {
    <div className='text-opacity-70 flex-wrap justify-center flex w-fit my-10 mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >  
         <Fade cascade triggerOnce damping={0.2} >
         <div className='mx-0.5 ' >Get </div>
-        <div className='mx-0.5 ' >expert </div>
-        <div className='mx-0.5 ' >guidance </div>
-        <div className='mx-0.5 ' >whenever </div>
-        <div className='mx-0.5 ' >you </div>
-        <div className='mx-0.5 ' >need </div>
-        <div className='mx-0.5 ' >it! </div>
+          <div className='mx-0.5 ' >the </div>
+        <div className='mx-0.5 ' >best</div>
+        <div className='mx-0.5 ' >Tutoring </div>
+        <div className='mx-0.5 ' >and</div>
+        <div className='mx-0.5 ' >Academic </div>
+        <div className='mx-0.5 ' >resources!</div>
+        
         </Fade>
         </div> 
       </Fade>
