@@ -15,7 +15,7 @@ const Hero = () => {
   const month = months[date.getMonth()]
 
   return (
-    <div className='mx-auto  sm:w-[70%] pt-20 sm:pt-40 bg-5 sm:pb-20 bg-image text-white '  >
+    <div className='mx-auto  sm:w-[90%] pt-20 sm:pt-40 bg-5 sm:pb-20 bg-image text-white '  >
       <AttentionSeeker direction='down' triggerOnce >
         
         {/* <div className='flex bg-black w-fit py-3 items-center px-5 border-spacing-3 border-opacity-10  border-s border-t border-grey rounded-full mx-auto justify-center ' >
