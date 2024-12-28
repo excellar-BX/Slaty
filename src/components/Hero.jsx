@@ -45,18 +45,20 @@ const Hero = () => {
         </div> 
       </Fade>
       <div className="wrapper sm:text-xl overflow-hidden font-bold flex w-full ">
-        <div className="logos flex justify-around even:text-orange h-20 text-white my-5 sm:my-10  "> 
-          <div className='w-[200px]' >Logo 1</div>
-          <div className='w-[200px]' >Logo 2</div>
-          <div className='w-[200px]' >Logo 3</div>
-          <div className='w-[200px]' >Logo 4</div>
-          <div className='w-[200px]' >Logo 5</div>
-          <div className='w-[200px]' >Logo 6</div>
-          <div className='w-[200px]' >Logo 7</div>
-          <div className='w-[200px]' >Logo 8</div>
-          <div className='w-[200px]' >Logo 9</div>
-          <div className='w-[200px]' >Logo 10</div>
-        </div>
+        <div className="logos flex justify-around even:text-orange h-20 text-white my-5 sm:my-10  "> <div className='w-[200px]' >KnowledgeHub</div>
+          <div className='w-[200px] text-orange ' >LearnSphere</div>
+          <div className='w-[200px]' >EduPro</div>
+          <div className='w-[200px] text-orange ' >Mentor path</div>
+        <div className='w-[200px]' >KnowledgeHub</div>
+          <div className='w-[200px] text-orange ' >LearnSphere</div>
+          <div className='w-[200px]' >EduPro</div>
+          <div className='w-[200px] text-orange ' >Mentor path</div>
+        <div className='w-[200px]' >KnowledgeHub</div>
+          <div className='w-[200px] text-orange ' >LearnSphere</div>
+          <div className='w-[200px]' >EduPro</div>
+          <div className='w-[200px] text-orange ' >Mentor path</div>
+        
+          </div>
       </div>
     </div>
   )
