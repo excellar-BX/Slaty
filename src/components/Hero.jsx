@@ -29,7 +29,7 @@ const Hero = () => {
       <Fade direction='down' cascade triggerOnce  duration={3000} damping={0.2} >
 
         {/*<div className=' flex justify-center items-center text-xl sm:text-4xl  xl:text-6xl font-bold ' >It's <span className='text-orange mx-4 my-8 ' >{month} {day.toString().padStart(2, 0)}</span></div>*/}
-      <div className='flex flex-wrap mx-5 xl:text-7xl sm:text-5xl text-2xl justify-center items-center' >Are you a <div className='text-orange' >student?</div><div className='animate-spin ' > ✦ </div> Learn how you can use <div className='text-orange' >SLATY</div> to get better grades</div>
+      <div className='flex flex-wrap xl:text-7xl sm:text-5xl text-2xl justify-center items-center' >Are you a <span className='text-orange' >student?</span><span className='animate-spin ' > ✦ </span> Learn how you can use <span className='text-orange' >SLATY</span> to get better grades</div>
       <div className=' flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-70 max-w-[500px] text-center mx-auto '  >Join the waitlist today and recieve a free personalized study guide tailored to your academic needs</div>
       <Link to='/waitlist' >
       <div className='flex justify-center px-5 sm:px-10 py-3 sm:py-5 sm:text-xl mx-auto hover:bg-[#ff9e3d] hover:cursor-pointer items-center mt-10 sm:mt-20  border-spacing-3 border-opacity-10 border border-grey  bg-orange rounded-lg w-fit animate-bounce ' >Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -rotate-45' /> </div>
