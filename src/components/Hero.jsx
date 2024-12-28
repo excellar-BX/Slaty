@@ -29,11 +29,11 @@ const Hero = () => {
       <Fade direction='down' cascade triggerOnce  duration={3000} damping={0.2} >
 
         {/*<div className=' flex justify-center items-center text-xl sm:text-4xl  xl:text-6xl font-bold ' >It's <span className='text-orange mx-4 my-8 ' >{month} {day.toString().padStart(2, 0)}</span></div>*/}
-      <div className='flex flex-col sm:flex-row flex-wrap xl:text-6xl sm:text-4xl my-5 w-[90%] text-2xl justify-center items-center' >
-  <div>Are you a <span className='text-orange mx-0.5 ' > student? </span>
+      <div className='flex flex-col sm:flex-row flex-wrap xl:text-6xl sm:text-4xl my-5 w-[90%] text-2xl justify-center text-center items-center' >
+  <div>Are you a <span className='text-orange mx-0.5 ' > student </span> ?
   </div>
-    <div>
-    <span className='animate-spin mx-0.5' > ✦ </span> 
+    <div className='animate-spin mx-0.5'>
+    ✦
     </div>
         <div>
         Learn how you can use <span className='text-orange mx-0.5 ' > SLATY </span> to get better grades
