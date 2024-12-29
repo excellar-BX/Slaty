@@ -69,7 +69,7 @@ Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -r
                     </div>
                 </a>
                 <div>
-                    <ul className='flex flex-col items-center lg:flex-row justify-center text-xl sm:text-2xl '>
+                    {/* <ul className='flex flex-col items-center lg:flex-row justify-center text-xl sm:text-2xl '>
                         {Data.map((data, index) => (
                             <Link className="flex "
                                 activeClass="active"
@@ -81,7 +81,7 @@ Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -r
                                 <li className=' sm:mx-5 lg:my-0 my-2 hover:text-opacity-100 ease-in duration-500 cursor-pointer text-white text-opacity-70 '>{data.Title}</li>
                             </Link>
                         ))}
-                    </ul>
+                    </ul>*/}
                 </div>
                 <div className='sm:text-2xl  text-center text-white text-opacity-70 my-5 sm:my-10 '>
 Copyright <span className='text-orange'>SLATY</span>. All right reserved.
