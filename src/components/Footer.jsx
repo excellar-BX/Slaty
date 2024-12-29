@@ -30,6 +30,7 @@ const Footer = () => {
         <div>
         Learn how you can use <span className='text-orange mx-0.5 ' > SLATY </span> to get better grades
         </div>
+        </div>
       </div>
       <div className=' flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-70 max-w-[500px] text-center mx-auto '  >Join the waitlist today and recieve a free personalized study guide tailored to your academic needs</div>
       <Link to='/waitlist' >
