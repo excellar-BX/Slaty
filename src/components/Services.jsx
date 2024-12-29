@@ -17,7 +17,7 @@ const Services = () => {
       <div className=' border-spacing-3 border-opacity-10 border border-grey py-2 px-5 w-fit mx-auto rounded-full ' > Our Services</div>
       </AttentionSeeker>  
       <Fade triggerOnce cascade duration={1500} damping={0.2} direction='up' >
-      <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center my-10 ' >Build. Research. Succeed.</div>
+      <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center my-10 ' >Discover Slaty.</div>
       <div className='text-opacity-70 w-fit mx-auto sm:text-xl sm:max-w-[50%] text-center text-white ' >Sign up today to start tutoring and earning!</div>
       </Fade>
       <div className="card flex flex-wrap items-center justify-center gap-10 my-20 ">
