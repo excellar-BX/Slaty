@@ -2,6 +2,8 @@ import React from 'react'
 import { AttentionSeeker, Fade, Rotate } from 'react-awesome-reveal'
 import { BiBrain, BiCheckCircle, BiDownArrowAlt, BiGroup } from 'react-icons/bi'
 
+import {Link} from 'react-scroll'
+
 
 
 
@@ -39,8 +41,13 @@ const Works = () => {
         </Fade>
       </div>
       <AttentionSeeker triggerOnce duration={1500} >
-      <div className='w-fit flex mx-auto px-5 sm:px-10 py-3 sm:py-5 sm:text-xl rounded-md my-20 bg-orange' >See Pricing <BiDownArrowAlt className='-rotate-45 text-2xl ' /> </div>
-      </AttentionSeeker>
+      <Link
+              activeClass="active"
+              smooth={true}
+              spy={true}
+              offset={-150}
+              to='pricing' ><div className='w-fit flex mx-auto px-5 sm:px-10 py-3 sm:py-5 sm:text-xl rounded-md my-20 cursor-pointer bg-orange' >See Pricing <BiDownArrowAlt className='-rotate-45 text-2xl ' /> </div>
+     </Link> </AttentionSeeker>
     </div>
   )
 }

@@ -2,44 +2,11 @@ import React from 'react'
 import {
     Fade
 } from 'react-awesome-reveal'
-import { BiDownArrowAlt } from 'react-icons/bi';
-import {
-    Link
-} from 'react-scroll'
+import { BiDownArrowAlt, BiLogoFacebookSquare, BiLogoInstagram, } from 'react-icons/bi';
+import { FaTwitterSquare } from 'react-icons/fa';
 
 const Footer = () => {
 
-
-    const Data = [{
-        Title: 'How it works',
-        route: 'h-works'
-    },
-        {
-            Title: 'Mission',
-            route: 'mission'
-        },
-        {
-            Title: 'Works',
-            route: 'works'
-        },
-        {
-            Title: 'Pricing',
-            route: 'pricing'
-        },
-        {
-            Title: 'Services',
-            route: 'services'
-        },
-        {
-            Title: 'Contact',
-            route: 'contact'
-        },
-        {
-            Title: 'Terms and Condition',
-            route: 'terms'
-        },
-
-    ]
 
     return (
         <div className='py-40 text-white '>
@@ -85,6 +52,11 @@ Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -r
                 </div>
                 <div className='sm:text-2xl  text-center text-white text-opacity-70 my-5 sm:my-10 '>
 Copyright <span className='text-orange'>SLATY</span>. All right reserved.
+                </div>
+                <div className="socials text-3xl flex justify-center sm:justify-end   mx-10 ">
+                <a className='mx-3 text-white  hover:text-orange' href="https://www.facebook.com/profile.php?id=61556313239954"><BiLogoFacebookSquare/></a>
+                <a className='mx-3 text-white  hover:text-orange' href="https://x.com/Slaty3419991"><FaTwitterSquare/></a>
+                <a className='mx-3 text-white  hover:text-orange' href="https://www.instagram.com/slaty4326?igsh=YzljYTk10Dg3Zg=="><BiLogoInstagram/></a>
                 </div>
             </Fade>
         </div>
