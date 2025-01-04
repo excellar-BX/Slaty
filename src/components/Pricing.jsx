@@ -20,7 +20,7 @@ const Pricing = () => {
           <div><span>Online Tutoring:</span> One-on-One sessions with expert guidance - 10,000 naira</div>
           <div><span>Group Live classes:</span> Interactive and collaborative learning experiences - 7000 naira</div>
       </div>),  plan1: 'Online Tutoring One-on-One', plan2: 'Group Live Classes' },
-    { id: 4, spots: 3, heading: 'Literary Writing Seervices', subheading: 'Crafting Compelling Stories, One Word at a Time', price: '100,000', pricingdetails:(
+    { id: 4, spots: 3, heading: 'Literary Writing Services', subheading: 'Crafting Compelling Stories, One Word at a Time', price: '100,000', pricingdetails:(
       <div>
           <div className='text-[16px] '>Literary Writing Services:</div>
           <div><span>Term Paper:</span> Meticulously researched and professionally writtten - 10,000 naira</div>
@@ -55,7 +55,7 @@ const Pricing = () => {
       <Fade direction='up' duration={2000} triggerOnce >
         <div className="pricing-filter flex flex-col sm:flex-row h-fit items-center justify-around bg-white bg-opacity-10  py-3 w-full lg:max-w-[20%] xl:max-w-[30%] mx-auto rounded-xl sm:rounded-full text-lg ">
           {filters.map((data, index) => (
-            <div className={`flex items-center ${filterkey === data.key ? 'bg-orange ' : 'bg-white bg-opacity-50'} cursor-pointer sm:my-0 my-4 py-1 px-5 rounded-full `} onClick={() => { setFilterKey(data.key) }} >
+            <div className={`flex items-center ${filterkey === data.key ? 'bg-orange ' : 'bg-white bg-opacity-20'} cursor-pointer sm:my-0 my-4 py-1 px-5 rounded-full `} onClick={() => { setFilterKey(data.key) }} >
               {index === 0 ? <div className={`flex items-center py-2 `} >{data.label}  <div className='bg-white text-orange px-5 text-lg rounded-full mx-5 ' >Save 20%</div></div> : (data.label)}
             </div>
           ))}
