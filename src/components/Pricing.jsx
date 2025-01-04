@@ -55,7 +55,7 @@ const Pricing = () => {
       <Fade direction='up' duration={2000} triggerOnce >
         <div className="pricing-filter flex flex-col sm:flex-row h-fit items-center justify-around bg-white bg-opacity-10  py-3 w-full lg:max-w-[20%] xl:max-w-[30%] mx-auto rounded-xl sm:rounded-full text-lg ">
           {filters.map((data, index) => (
-            <div className={`flex items-center bg-white bg-opacity-50 ${filterkey === data.key && 'bg-orange '} cursor-pointer sm:my-0 my-4 py-1 px-5 rounded-full `} onClick={() => { setFilterKey(data.key) }} >
+            <div className={`flex items-center ${filterkey === data.key ? 'bg-orange ' : 'bg-white bg-opacity-50'} cursor-pointer sm:my-0 my-4 py-1 px-5 rounded-full `} onClick={() => { setFilterKey(data.key) }} >
               {index === 0 ? <div className={`flex items-center py-2 `} >{data.label}  <div className='bg-white text-orange px-5 text-lg rounded-full mx-5 ' >Save 20%</div></div> : (data.label)}
             </div>
           ))}
