@@ -10,7 +10,7 @@ const PricingModal = ({pricingdetails}) => {
 <OutsideClickHandler onOutsideClick={()=>{setModalActive(false)}} >            
 <div className=' absolute top-0 right-0 cursor-pointer m-3 '  onClick={()=>{setModalActive(!modalActive)}}  ><BiInfoCircle className=' cursor-pointer text-2xl mr-2'  onClick={()=>{setModalActive(!modalActive)}}/></div>
 </OutsideClickHandler>
-<div className={` absolute text-white bg-orange shadow-xl  border-spacing-3 border-opacity-10 border border-grey max-w-[85%] my-10 rounded-xl p-2 text-sm z-[1] top-0 right-3 ${modalActive?'scale-100': 'scale-0'}  `}>
+<div className={` absolute text-white bg-orange shadow-xl  border-spacing-3 border-opacity-10 border border-grey max-w-[85%] sm:max-w-[70%] my-10 rounded-xl p-2 text-sm z-[1] top-0 right-3 ${modalActive?'scale-100': 'scale-0'}  `}>
 <div>
                     <div className='text-lg' >Professional Literary Writing Services</div>
                     <div>Elevate your academic and intellectual pursuits with our expertly crafted writing and tutoring services:</div>
