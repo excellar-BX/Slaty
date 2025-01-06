@@ -55,8 +55,8 @@ Copyright <span className='text-orange'>SLATY</span>. All right reserved.
                 </div>
                 <div className="socials text-3xl flex justify-center sm:justify-end   mx-10 ">
                 <a className='mx-3 text-white  hover:text-orange' href="https://www.facebook.com/profile.php?id=61556313239954"><BiLogoFacebookSquare/></a>
-                <a className='mx-3 text-white  hover:text-orange' href="https://x.com/Slaty3419991"><FaTwitterSquare/></a>
-                <a className='mx-3 text-white  hover:text-orange' href="https://www.instagram.com/slaty4326?igsh=YzljYTk10Dg3Zg=="><BiLogoInstagram/></a>
+                <a className='mx-3 text-white  hover:text-orange' href="https://x.com/Slaty_1"><FaTwitterSquare/></a>
+                <a className='mx-3 text-white  hover:text-orange' href="https://www.instagram.com/slaty_1?igsh=YzljYTk1ODg3Zg=="><BiLogoInstagram/></a>
                 </div>
             </Fade>
         </div>
