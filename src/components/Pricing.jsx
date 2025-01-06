@@ -79,7 +79,7 @@ const Pricing = () => {
                   </div> */}
                   <div className='z-[1] sm:text-3xl text-2xl font-bold my-2 ' >{data.heading}</div>
                   <div className='z-[1] text-white text-sm  text-opacity-50 ' >{data.subheading}</div>
-                  <div className='z-[1] flex flex-wrap items-baseline my-5 ' ><div className='sm:text-4xl text-3xl font-bold ' > {data.price} Naira</div> /Monthly</div>
+                  {/* <div className='z-[1] flex flex-wrap items-baseline my-5 ' ><div className='sm:text-4xl text-3xl font-bold ' > {data.price} Naira</div> /Monthly</div>*/}
                   <div className='z-[1] text-white text-opacity-30 text-sm' >{data.installment}</div>
                   <div className='z-[1] w-[98%] mx-auto justify-center flex border-spacing-3 border-opacity-10 border border-grey bg-orange py-3 my-5 rounded-md ' >Get started <BiUpArrowAlt className=' z-[1] rotate-45 text-2xl ' /> </div>
                   <div className=' z-[1] text-white text-opacity-50 ' >What's included: </div>
