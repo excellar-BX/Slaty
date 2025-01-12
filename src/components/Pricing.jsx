@@ -45,7 +45,7 @@ const Pricing = () => {
   const filteredItems = Pricing.filter((data) => (data.id === filterkey))
 
   return (
-    <div id='pricing' className='mb-20 mt-40 text-white ' >
+    <div id='pricing' className='py-40 text-white ' >
       <AttentionSeeker triggerOnce duration={2000} >
         <div className=' border-spacing-3 border-opacity-10 border border-grey py-2 px-5 w-fit mx-auto rounded-full ' > Simple Pricing</div>
       </AttentionSeeker>
