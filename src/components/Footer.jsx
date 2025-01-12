@@ -9,7 +9,7 @@ const Footer = () => {
 
 
     return (
-        <div className='py-40 text-white '>
+        <div className='pb-40 text-white '>
             <div className=' border-spacing-3 border-opacity-10 border rounded-3xl border-grey py-20 bg-image  '>
                 <Fade duration={2000} cascade damping={0.3} triggerOnce direction='up'>
                     <div className=' min-w-[20%] text-center text-orange tracking-widest text-3xl font-bold animate-bounce '>
