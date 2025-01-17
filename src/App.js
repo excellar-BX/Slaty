@@ -34,8 +34,8 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/waitlist" element={<Waitlist/>} >
-          <Route path="tutors" element={<TutorsWaitList/>} />
-          <Route path="students" element={<StudentWaitList/>} />
+          <Route path="/tutors" element={<TutorsWaitList/>} />
+          <Route path="/students" element={<StudentWaitList/>} />
           </Route>
         </Routes>
       </Router>
