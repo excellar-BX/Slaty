@@ -32,14 +32,14 @@ function App() {
       <Header/>
       <Router>
         <Routes>
-    <Route path='/'>
+         <Route path='/'>
           <Route index element={<Home />} />
           <Route path="waitlist" >
-  <Route index element={<Waitlist/>} >
+          <Route index element={<Waitlist/>} />
           <Route path="tutors" element={<TutorsWaitList/>} />
           <Route path="students" element={<StudentWaitList/>} />
           </Route>
-  </Route>
+         </Route>
         </Routes>
       </Router>
 {/*<Faq/>*/}
