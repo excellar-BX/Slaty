@@ -10,22 +10,21 @@ import Header from "./components/Header";
 import TutorsWaitList from "./screens/TutorsWaitList";
 import StudentWaitList from "./screens/StudentWaitList";
 import Waitlist from "./screens/Waitlist";
+import Slatylogo from "./assets/slatylogo.jpg";
 
 function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(false);
+    setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 3000);
   }, []);
 
   return loading ? (
-    <div className=" bg-web-orange-700  h-screen bg-fixed  pt-[20%]  ">
-      <h1>
-        <PuffLoader color="#ffffff" size={100} className=" flex mx-auto  " />
-      </h1>
+    <div className=" bg-web-orange-700  h-screen bg-fixed flex items-center justify-center  ">
+      <img src={Slatylogo} alt="slaty-logo"/>
     </div>
   ) : (
     <div className="App bg-black transition-all ease-in-out duration-500 px-[5%] h-full mx-auto w-full ">
