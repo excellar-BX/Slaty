@@ -71,6 +71,20 @@ const Hero = () => {
           <div className='w-[200px] text-orange ' >Mentor path</div>
         
           </div>
+        <div className="logos flex justify-around even:text-orange h-20 text-white my-5 sm:my-10  "> <div className='w-[200px]' >KnowledgeHub</div>
+          <div className='w-[200px] text-orange ' >LearnSphere</div>
+          <div className='w-[200px]' >EduPro</div>
+          <div className='w-[200px] text-orange ' >Mentor path</div>
+        <div className='w-[200px]' >KnowledgeHub</div>
+          <div className='w-[200px] text-orange ' >LearnSphere</div>
+          <div className='w-[200px]' >EduPro</div>
+          <div className='w-[200px] text-orange ' >Mentor path</div>
+        <div className='w-[200px]' >KnowledgeHub</div>
+          <div className='w-[200px] text-orange ' >LearnSphere</div>
+          <div className='w-[200px]' >EduPro</div>
+          <div className='w-[200px] text-orange ' >Mentor path</div>
+        
+          </div>
       </div>
     </div>
   )
