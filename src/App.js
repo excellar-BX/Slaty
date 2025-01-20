@@ -20,7 +20,7 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 3000);
-  }, []);
+  }, [App]);
 
   return loading ? (
     <div className=" bg-black  h-screen fixed flex items-center justify-center  ">
