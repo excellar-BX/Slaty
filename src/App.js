@@ -23,7 +23,7 @@ function App() {
   }, [App]);
 
   return loading ? (
-    <div className=" bg-black  h-screen fixed flex items-center justify-center  ">
+    <div className=" bg-black  h-screen fixed flex items-center w-full justify-center  ">
       <img src={Slatylogo} className="w-[60%] sm:w-[40%] rounded-2xl " alt="slaty-logo"/>
     </div>
   ) : (
