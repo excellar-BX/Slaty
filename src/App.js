@@ -25,15 +25,16 @@ function App() {
 
   return loading ? (
 
-    <Helmet>  <!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-
-  </Helmet>
+    
     <div className=" bg-black  h-screen fixed flex items-center w-full justify-center  ">
       <img src={Slatylogo} className="w-[60%] sm:w-[40%] rounded-2xl " alt="slaty-logo"/>
     </div>
   ) : (
     <div className="App bg-black transition-all ease-in-out duration-500 px-[5%] h-full mx-auto w-full ">
+    <Helmet>  <!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+  </Helmet> 
       <Header/>
       <Router>
         <Routes>
