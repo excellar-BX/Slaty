@@ -31,11 +31,10 @@ function App() {
     </div>
   ) : (
     <div className="App bg-black transition-all ease-in-out duration-500 px-[5%] h-full mx-auto w-full ">
-    <Helmet>  <!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-
-  </Helmet> 
+    
       <Header/>
+    <Helmet> 
+<script src="https://static.elfsight.com/platform/platform.js" async></script></Helmet> 
       <Router>
         <Routes>
          <Route path='/'>
