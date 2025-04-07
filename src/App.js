@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Helmet from "react-helmet"
 import { PuffLoader } from "react-spinners";
 import Home from "./screens/Home";
 
@@ -23,6 +24,11 @@ function App() {
   }, [App]);
 
   return loading ? (
+
+    <Helmet>  <!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+  </Helmet>
     <div className=" bg-black  h-screen fixed flex items-center w-full justify-center  ">
       <img src={Slatylogo} className="w-[60%] sm:w-[40%] rounded-2xl " alt="slaty-logo"/>
     </div>
@@ -42,6 +48,9 @@ function App() {
         </Routes>
       </Router>
 {/*<Faq/>*/}
+
+<div class="elfsight-app-d2fe7d14-10ce-4b2b-86b2-9e894c9ac722" data-elfsight-app-lazy></div>
+
       <Footer/>
     </div>
   );
