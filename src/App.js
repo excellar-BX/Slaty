@@ -49,7 +49,7 @@ function App() {
       </Router>
 {/*<Faq/>*/}
 
-<div class="elfsight-app-d2fe7d14-10ce-4b2b-86b2-9e894c9ac722" data-elfsight-app-lazy></div>
+<div class="elfsight-app-d2fe7d14-10ce-4b2b-86b2-9e894c9ac722 fixed bottom-20 right-10" data-elfsight-app-lazy></div>
 
       <Footer/>
     </div>
