@@ -1,0 +1,12 @@
+{
+  "name": "slaty-vercel-deeplinks-full",
+  "version": "1.0.0",
+  "description": "Deep link backend for Slaty with referral tracking and enrollment",
+  "main": "api/link/create.js",
+  "scripts": {
+    "start": "node ./api/link/create.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.10.1"
+  }
+}

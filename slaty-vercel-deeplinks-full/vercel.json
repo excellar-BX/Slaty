@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/api/link/create", "dest": "/api/link/create.js" },
+    { "src": "/link/(?<id>[A-Za-z0-9_-]+)$", "dest": "/api/link/[id].js?id=$1" },
+    { "src": "/api/enroll", "dest": "/api/enroll.js" }
+  ]
+}
