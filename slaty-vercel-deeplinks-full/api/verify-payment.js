@@ -1,32 +1,40 @@
 const initFirebase = require('../firebase');
 const admin = require('firebase-admin');
+const axios = require('axios');
 
 module.exports = async (req, res) => {
   try {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
 
-    const db = initFirebase();
-    const { linkId, studentId, paymentId, amount } = req.body || {};
-
-    if (!linkId || !studentId || !paymentId) {
-      return res.status(400).json({ error: 'linkId, studentId and paymentId are required' });
+    const { reference, linkId, studentId } = req.body || {};
+    if (!reference || !linkId || !studentId) {
+      return res.status(400).json({ error: 'reference, linkId, studentId are required' });
     }
 
+    const db = initFirebase();
     const linkRef = db.collection('referralLinks').doc(linkId);
     const linkSnap = await linkRef.get();
     if (!linkSnap.exists) return res.status(404).json({ error: 'Link not found' });
 
     const linkData = linkSnap.data();
-    if (amount && amount !== linkData.amount) {
-      return res.status(400).json({ error: 'Invalid amount tampering detected' });
+
+    // Verify with Paystack
+    const paystackRes = await axios.get(`https://api.paystack.co/transaction/verify/${reference}`, {
+      headers: { Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}` }
+    });
+
+    const verification = paystackRes.data;
+    if (!verification.status || verification.data.status !== 'success') {
+      return res.status(400).json({ error: 'Payment verification failed' });
     }
 
+    // Auto-enroll
     const enrollRef = await db.collection('enrollments').add({
       linkId,
       referrerId: linkData.referrerId,
       classId: linkData.classId || null,
       studentId,
-      paymentId,
+      paymentId: reference,
       amount: linkData.amount,
       createdAt: admin.firestore.FieldValue.serverTimestamp()
     });
@@ -37,7 +45,7 @@ module.exports = async (req, res) => {
 
     res.status(200).json({ success: true, enrollmentId: enrollRef.id });
   } catch (err) {
-    console.error(err);
+    console.error(err.response?.data || err.message);
     res.status(500).json({ error: 'Server error' });
   }
 };
