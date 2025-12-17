@@ -10,11 +10,13 @@ module.exports = async (req, res) => {
     const linkSnap = await linkRef.get();
     if (!linkSnap.exists) return res.status(404).send('Link not found');
 
-    const linkData = linkSnap.data();
-    const appLink = `slaty://class/${linkId}`;
-    const fallback = process.env.PLAY_STORE_URL || "https://play.google.com/store/apps/details?id=com.AbasifrekeEyo.slaty";
+    // Android Intent URL (this is the key)
+    const intentUrl =
+      `intent://class/${linkId}` +
+      `#Intent;scheme=slaty;package=com.AbasifrekeEyo.slaty;` +
+      `S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.AbasifrekeEyo.slaty;end`;
 
-    res.writeHead(302, { Location: `${appLink}?fallback=${encodeURIComponent(fallback)}` });
+    res.writeHead(302, { Location: intentUrl });
     res.end();
   } catch (err) {
     console.error(err);
