@@ -1,31 +1,23 @@
-const initFirebase = require('../firebase');
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuid } from "uuid";
+import { classes } from "../lib/db.js";
 
-module.exports = async (req, res) => {
-  try {
-    if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
+export default function handler(req, res) {
+  if (req.method !== "POST") return res.status(405).send("Method not allowed");
 
-    const db = initFirebase();
-    const { tutorId, classId, amount } = req.body || {};
+  const { tutorId, classId, amount } = req.body;
+  if (!tutorId || !classId || !amount)
+    return res.status(400).json({ error: "Missing fields" });
 
-    if (!tutorId || !classId || !amount) {
-      return res.status(400).json({ error: 'Missing fields' });
-    }
+  const token = uuid();
+  classes.set(token, {
+    tutorId,
+    classId,
+    amount,
+    expiresAt: Date.now() + 60 * 60 * 1000,
+    active: true
+  });
 
-    const linkId = uuidv4();
-    const deepLink = `https://slaty-backend.vercel.app/api/r/${linkId}`;
-
-    await db.collection('referralLinks').doc(linkId).set({
-      referrerId: tutorId,
-      classId,
-      amount,
-      enrollments: 0,
-      createdAt: new Date()
-    });
-
-    res.status(200).json({ success: true, deepLink, linkId });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Server error' });
-  }
-};
+  res.json({
+    deepLink: `https://slaty-backend.vercel.app/class/${token}`
+  });
+}
