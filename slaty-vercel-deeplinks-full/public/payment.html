@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Join Class</title>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+  <h2>Pay to Join Class</h2>
+  <input id="email" placeholder="Email" />
+  <button onclick="pay()">Pay</button>
+
+  <script>
+    const token = "{{TOKEN}}";
+    const amount = "{{AMOUNT}}";
+
+    function pay() {
+      const email = document.getElementById("email").value;
+      fetch("/api/init-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, email })
+      })
+      .then(res => res.json())
+      .then(data => window.location.href = data.authorizationUrl);
+    }
+  </script>
+</body>
+</html>
