@@ -1,13 +1,12 @@
-module.exports = async function (req, res) {
-  try {
-    res.setHeader("Content-Type", "application/json");
+module.exports = function (req, res) {
+  res.setHeader("Content-Type", "application/json");
 
-    if (req.method !== "POST") {
-      return res.status(405).json({
-        success: false,
-        error: "Method not allowed",
-      });
-    }
+  return res.status(200).json({
+    success: true,
+    message: "Backend is alive",
+  });
+};
+
 
     let body = req.body;
 
