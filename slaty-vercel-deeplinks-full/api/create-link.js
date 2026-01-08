@@ -1,7 +1,6 @@
-import crypto from "crypto";
-import { classes } from "../lib/db.js";
+export default async function handler(req, res) {
+  res.setHeader("Content-Type", "application/json");
 
-export default function handler(req, res) {
   try {
     if (req.method !== "POST") {
       return res.status(405).json({
@@ -10,7 +9,14 @@ export default function handler(req, res) {
       });
     }
 
-    const { tutorId, classId, amount } = req.body || {};
+    let body = req.body;
+
+    // Vercel sometimes sends body as string
+    if (typeof body === "string") {
+      body = JSON.parse(body);
+    }
+
+    const { tutorId, classId, amount } = body || {};
 
     if (!tutorId || !classId || !amount) {
       return res.status(400).json({
@@ -19,22 +25,14 @@ export default function handler(req, res) {
       });
     }
 
-    const token = crypto.randomBytes(16).toString("hex");
-
-    classes[token] = {
-      tutorId,
-      classId,
-      amount,
-      createdAt: Date.now(),
-      expiresAt: Date.now() + 60 * 60 * 1000, // 1 hour
-    };
+    const token = Math.random().toString(36).substring(2, 15);
 
     return res.status(200).json({
       success: true,
-      deepLink: `${process.env.BASE_URL}/class/${token}`,
+      deepLink: `https://slaty-backend.vercel.app/api/class?token=${token}`,
     });
   } catch (err) {
-    console.error("Create link error:", err);
+    console.error("CREATE LINK ERROR:", err);
 
     return res.status(500).json({
       success: false,
