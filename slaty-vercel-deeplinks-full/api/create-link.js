@@ -1,61 +1,52 @@
-const { v4: uuidv4 } = require('uuid');
-const initFirebase = require('../firebase');
-
-module.exports = async (req, res) => {
-  // ✅ Always return JSON
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  // ✅ Handle preflight
-  if (req.method === 'OPTIONS') {
-    return res.status(200).json({ ok: true });
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
-  }
-
+module.exports = async function (req, res) {
   try {
-    // ✅ Defensive body parsing
-    const body = typeof req.body === 'string'
-      ? JSON.parse(req.body)
-      : req.body;
+    res.setHeader("Content-Type", "application/json");
 
-    const { tutorId, classId, amount } = body || {};
-
-    if (!tutorId || !classId || !amount) {
-      return res.status(400).json({ error: 'Missing required fields' });
+    if (req.method !== "POST") {
+      return res.status(405).json({
+        success: false,
+        error: "Method not allowed",
+      });
     }
 
-    const db = initFirebase(); // may throw — now safely inside try
+    let body = req.body;
 
-    const linkId = uuidv4();
-    const deepLink = `https://slaty-backend.vercel.app/api/r/${linkId}`;
+    if (!body) {
+      body = {};
+    }
 
-    await db.collection('referralLinks').doc(linkId).set({
-      tutorId,
-      classId,
-      amount: Number(amount),
-      enrollments: 0,
-      active: true,
-      createdAt: new Date().toISOString(),
-    });
+    if (typeof body === "string") {
+      try {
+        body = JSON.parse(body);
+      } catch (e) {
+        return res.status(400).json({
+          success: false,
+          error: "Invalid JSON body",
+        });
+      }
+    }
+
+    const { tutorId, classId, amount } = body;
+
+    if (!tutorId || !classId || !amount) {
+      return res.status(400).json({
+        success: false,
+        error: "Missing required fields",
+      });
+    }
+
+    const token = Math.random().toString(36).slice(2);
 
     return res.status(200).json({
       success: true,
-      linkId,
-      deepLink,
+      deepLink: `https://slaty-backend.vercel.app/api/class?token=${token}`,
     });
-
   } catch (err) {
-    console.error('Create class error:', err);
+    console.error("CREATE LINK CRASH:", err);
 
-    // ✅ ALWAYS return JSON
     return res.status(500).json({
       success: false,
-      error: err.message || 'Internal server error',
+      error: "Server crashed",
     });
   }
 };
