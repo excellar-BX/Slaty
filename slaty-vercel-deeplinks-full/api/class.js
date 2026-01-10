@@ -1,29 +1,26 @@
-const initFirebase = require("../firebase");
+import { classes } from "../lib/db.js";
 
-module.exports = async function (req, res) {
-  try {
-    const { token } = req.query;
+export default function handler(req, res) {
+  const { token } = req.query;
+  const data = classes[token];
 
-    if (!token) {
-      return res.status(400).send("Invalid class link");
-    }
-
-    const db = initFirebase();
-    const doc = await db.collection("classes").doc(token).get();
-
-    if (!doc.exists) {
-      return res.status(404).send("Class not found");
-    }
-
-    const classData = doc.data();
-
-    // ✅ TEMP RESPONSE (later: redirect to payment)
-    return res.status(200).json({
-      success: true,
-      class: classData,
-    });
-  } catch (err) {
-    console.error("CLASS FETCH ERROR:", err);
-    return res.status(500).send("Server error");
+  if (!data || Date.now() > data.expiresAt) {
+    return res.send("<h2>Class expired</h2>");
   }
-};
+
+  res.send(`
+    <html>
+      <body style="font-family:sans-serif;text-align:center;padding:40px">
+        <h2>${data.classId}</h2>
+        <p>₦${data.amount}</p>
+
+        <form action="/api/init-payment" method="POST">
+          <input type="hidden" name="token" value="${token}" />
+          <input name="email" type="email" placeholder="Email" required />
+          <br/><br/>
+          <button>Pay & Join Class</button>
+        </form>
+      </body>
+    </html>
+  `);
+}
