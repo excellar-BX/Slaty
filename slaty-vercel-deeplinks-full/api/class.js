@@ -1,18 +1,29 @@
-import { classes } from "../lib/db.js";
-import fs from "fs";
-import path from "path";
+const initFirebase = require("../firebase");
 
-export default function handler(req, res) {
-  const token = req.query[0];
-  const data = classes.get(token);
+module.exports = async function (req, res) {
+  try {
+    const { token } = req.query;
 
-  if (!data || !data.active) return res.status(404).send("Class not found");
-  if (Date.now() > data.expiresAt) return res.status(410).send("Class expired");
+    if (!token) {
+      return res.status(400).send("Invalid class link");
+    }
 
-  const html = fs.readFileSync(
-    path.join(process.cwd(), "public/payment.html"),
-    "utf8"
-  );
+    const db = initFirebase();
+    const doc = await db.collection("classes").doc(token).get();
 
-  res.send(html.replace("{{TOKEN}}", token).replace("{{AMOUNT}}", data.amount));
-}
+    if (!doc.exists) {
+      return res.status(404).send("Class not found");
+    }
+
+    const classData = doc.data();
+
+    // ✅ TEMP RESPONSE (later: redirect to payment)
+    return res.status(200).json({
+      success: true,
+      class: classData,
+    });
+  } catch (err) {
+    console.error("CLASS FETCH ERROR:", err);
+    return res.status(500).send("Server error");
+  }
+};
