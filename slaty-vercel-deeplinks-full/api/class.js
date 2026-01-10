@@ -2,9 +2,18 @@ import { classes } from "../lib/db.js";
 
 export default function handler(req, res) {
   const { token } = req.query;
+
+  if (!token) {
+    return res.send("<h2>Invalid class link</h2>");
+  }
+
   const data = classes[token];
 
-  if (!data || Date.now() > data.expiresAt) {
+  if (!data) {
+    return res.send("<h2>Class not found</h2>");
+  }
+
+  if (Date.now() > data.expiresAt) {
     return res.send("<h2>Class expired</h2>");
   }
 
