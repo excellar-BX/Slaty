@@ -1,2 +1,5 @@
-export const classes = new Map();
-export const payments = new Map();
+if (!globalThis.classes) {
+  globalThis.classes = {};
+}
+
+export const classes = globalThis.classes;
