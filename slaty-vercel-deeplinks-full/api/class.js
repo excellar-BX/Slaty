@@ -1,17 +1,17 @@
-import { classes } from "../lib/db.js";
+import { db } from "../lib/db.js";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { token } = req.query;
 
-  if (!token) {
-    return res.send("<h2>Invalid class link</h2>");
-  }
+  if (!token) return res.send("<h2>Invalid link</h2>");
 
-  const data = classes[token];
+  const doc = await db.collection("classes").doc(token).get();
 
-  if (!data) {
+  if (!doc.exists) {
     return res.send("<h2>Class not found</h2>");
   }
+
+  const data = doc.data();
 
   if (Date.now() > data.expiresAt) {
     return res.send("<h2>Class expired</h2>");
@@ -25,7 +25,7 @@ export default function handler(req, res) {
 
         <form action="/api/init-payment" method="POST">
           <input type="hidden" name="token" value="${token}" />
-          <input name="email" type="email" placeholder="Email" required />
+          <input name="email" type="email" required />
           <br/><br/>
           <button>Pay & Join Class</button>
         </form>
