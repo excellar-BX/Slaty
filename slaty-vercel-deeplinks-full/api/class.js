@@ -1,31 +1,35 @@
-import { classes } from "../lib/db.js";
+import admin from "firebase-admin";
 
-export default function handler(req, res) {
+const db = admin.firestore();
+
+export default async function handler(req, res) {
   const { token } = req.query;
 
   if (!token) {
-    return res.send("<h2>Invalid class link</h2>");
+    return res.status(400).send("<h2>Invalid class link</h2>");
   }
 
-  const data = classes[token];
+  const doc = await db.collection("classes").doc(token).get();
 
-  if (!data) {
-    return res.send("<h2>Class not found</h2>");
+  if (!doc.exists) {
+    return res.status(404).send("<h2>Class not found</h2>");
   }
+
+  const data = doc.data();
 
   if (Date.now() > data.expiresAt) {
-    return res.send("<h2>Class expired</h2>");
+    return res.status(410).send("<h2>Class expired</h2>");
   }
 
   res.send(`
     <html>
       <body style="font-family:sans-serif;text-align:center;padding:40px">
         <h2>${data.classId}</h2>
-        <p>₦${data.amount}</p>
+        <p>Amount: ₦${data.amount}</p>
 
         <form action="/api/init-payment" method="POST">
           <input type="hidden" name="token" value="${token}" />
-          <input name="email" type="email" placeholder="Email" required />
+          <input type="email" name="email" placeholder="Email" required />
           <br/><br/>
           <button>Pay & Join Class</button>
         </form>
