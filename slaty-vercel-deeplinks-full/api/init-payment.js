@@ -83,9 +83,9 @@ export default async function handler(req, res) {
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-    // 5. Success Response
-    return res.status(200).json({ authorizationUrl: authorization_url });
-
+    // 5. Redirect user directly to Paystack
+return res.redirect(authorization_url);
+    
   } catch (err) {
     console.error("SERVER ERROR:", err);
     return res.status(500).json({ error: "Internal Server Error" });
