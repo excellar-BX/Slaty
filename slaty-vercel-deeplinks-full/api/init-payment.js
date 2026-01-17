@@ -1,7 +1,6 @@
 import admin from "firebase-admin";
-import axios from "axios"; // You'll need axios for paystack request
 
-// 1. Initialize Firebase
+// 1. Initialize Firebase (Singleton pattern to prevent crashes)
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(
@@ -9,63 +8,72 @@ if (!admin.apps.length) {
     ),
   });
 }
+
 const db = admin.firestore();
 
 export default async function handler(req, res) {
+  // Allow only POST requests
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return res.status(405).json({ error: "Method not allowed. Use POST." });
   }
 
   const { token, email } = req.body;
 
   if (!token || !email) {
-    return res.status(400).json({ error: "Missing token or email" });
+    return res.status(400).json({ error: "Missing required fields: token and email." });
   }
 
   try {
-    // 2. Fetch class from Firestore
+    // 2. Validate Class Token in Firestore
     const classRef = db.collection("classes").doc(token);
     const classDoc = await classRef.get();
 
     if (!classDoc.exists) {
-      return res.status(404).json({ error: "Class not found or expired" });
+      return res.status(404).json({ error: "Class not found." });
     }
 
     const classData = classDoc.data();
-    
-    // Optional: Check if class is still active/valid
+
+    // Check expiration
     if (classData.expiresAt && Date.now() > classData.expiresAt) {
-      return res.status(410).json({ error: "Class link has expired" });
+      return res.status(410).json({ error: "This class link has expired." });
     }
 
-    const amountInKobo = classData.amount * 100; // Paystack takes kobo
-    
+    const amountInKobo = Math.round(classData.amount * 100);
+
     // 3. Initialize Paystack Transaction
-    const paystackResponse = await axios.post(
-      "https://api.paystack.co/transaction/initialize",
-      {
-        email,
+    const paystackResponse = await fetch("https://api.paystack.co/transaction/initialize", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
         amount: amountInKobo,
-        // Paystack callback URL (where they return after payment)
-        callback_url: "https://slaty-backend.vercel.app/api/verify-payment", 
+        callback_url: "https://slaty-backend.vercel.app/api/verify-payment",
         metadata: {
-          classToken: token, // Pass token through metadata to verify later
+          classToken: token, 
           custom_fields: [
             { display_name: "Class ID", variable_name: "class_id", value: classData.classId }
           ]
         }
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+      })
+    });
 
-    const { authorization_url, reference } = paystackResponse.data.data;
+    const paystackData = await paystackResponse.json();
 
-    // 4. Save pending payment to Firestore (instead of memory)
+    if (!paystackResponse.ok || !paystackData.status) {
+      console.error("PAYSTACK ERROR:", paystackData);
+      return res.status(400).json({ 
+        error: "Payment initialization failed", 
+        details: paystackData.message 
+      });
+    }
+
+    const { authorization_url, reference } = paystackData.data;
+
+    // 4. Save Pending Payment to Firestore
     await db.collection("payments").doc(reference).set({
       reference,
       classToken: token,
@@ -75,15 +83,11 @@ export default async function handler(req, res) {
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-    // 5. Redirect or return URL
-    // If called from the HTML form, we might want to redirect:
-    // res.redirect(authorization_url);
-    
-    // If called via AJAX/JSON:
-    res.status(200).json({ authorizationUrl: authorization_url });
+    // 5. Success Response
+    return res.status(200).json({ authorizationUrl: authorization_url });
 
   } catch (err) {
-    console.error("PAYMENT INIT ERROR:", err?.response?.data || err);
-    res.status(500).json({ error: "Payment initialization failed" });
+    console.error("SERVER ERROR:", err);
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 }
