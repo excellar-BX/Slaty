@@ -30,11 +30,14 @@ Learn how you can use <span className='text-orange mx-0.5 '> SLATY </span> to ge
                 <div className=' flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-70 max-w-[500px] text-center mx-auto '>
 Join the waitlist today and recieve a free personalized study guide tailored to your academic needs
                 </div>
-                <a href='/waitlist'>
-                    <div className='flex justify-center px-5 sm:px-10 py-3 sm:py-5 sm:text-xl mx-auto hover:bg-[#ff9e3d] hover:cursor-pointer items-center mt-10 sm:mt-20  border-spacing-3 border-opacity-10 border border-grey  bg-orange rounded-lg w-fit animate-bounce '>
-Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -rotate-45' />
-                    </div>
-                </a>
+                <div className="flex sm:flex-row flex-col gap-5 mx-auto justify-center items-center mt-10">
+                       <a href='/waitlist' >
+                     <div className='flex justify-center px-5 sm:px-10 py-3 sm:py-5 sm:text-xl mx-auto hover:bg-[#ff9e3d] hover:cursor-pointer items-center border-spacing-3 border-opacity-10 border border-grey  bg-orange rounded-lg w-fit ' >Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -rotate-45' /> </div>
+                     </a>
+                     <a href='https://docs.google.com/forms/d/e/1FAIpQLSdZYzOU5Gri3AiOXn_WkT8zTG9sXRqT9fnbSTeZCZ9U4ZBV4Q/viewform' >
+                     <div className='flex justify-center px-5 sm:px-10 py-3 sm:py-5 sm:text-xl mx-auto hover:bg-[#ff9e3d] hover:cursor-pointer items-center  border-spacing-3 border-opacity-10 border border-grey  bg-orange rounded-lg w-fit' >Apply Now <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -rotate-45' /> </div>
+                     </a>
+                     </div>
                 <div>
                     {/* <ul className='flex flex-col items-center lg:flex-row justify-center text-xl sm:text-2xl '>
                         {Data.map((data, index) => (

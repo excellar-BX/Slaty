@@ -33,7 +33,7 @@ const Header = () => {
               </Link>
             ))}
             </ul>
-            <Link to=''>
+            <Link to='https://docs.google.com/forms/d/e/1FAIpQLSdZYzOU5Gri3AiOXn_WkT8zTG9sXRqT9fnbSTeZCZ9U4ZBV4Q/viewform'>
             <div className=' bg-white bg-opacity-10 flex items-center justify-center mt-10 xl:my-0 rounded-lg h-12 w-[90%] xl:w-auto xl:px-5 border-spacing-3 border-opacity-10 border cursor-pointer border-grey' >Apply Now<BiUpArrowAlt className='rotate-45 text-3xl bg-white bg-opacity-0 ' /> </div>
 
             </Link>
