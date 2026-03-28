@@ -40,7 +40,7 @@ const Hero = () => {
         </div>
       </div>
       <div className=' flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-70 max-w-[500px] text-center mx-auto '  >Join the waitlist today and recieve a free personalized study guide tailored to your academic needs</div>
-      <div className="flex sm:flex-row flex-col gap-5 ">
+      <div className="flex sm:flex-row flex-col gap-5 mx-auto justify-center items-center mt-10">
         <Link to='/waitlist' >
       <div className='flex justify-center px-5 sm:px-10 py-3 sm:py-5 sm:text-xl mx-auto hover:bg-[#ff9e3d] hover:cursor-pointer items-center mt-10 sm:mt-20  border-spacing-3 border-opacity-10 border border-grey  bg-orange rounded-lg w-fit ' >Join WaitList <BiDownArrowAlt className=' bg-white bg-opacity-0 mx-2 text-2xl -rotate-45' /> </div>
       </Link>
