@@ -1,11 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Helmet from "react-helmet"
-import { PuffLoader } from "react-spinners";
-import Home from "./screens/Home";
+import { Helmet } from "react-helmet";
 
-import Faq from "./components/Faq";
+import Home from "./screens/Home";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import TutorsWaitList from "./screens/TutorsWaitList";
@@ -18,41 +16,53 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, [App]);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return loading ? (
-
-    
-    <div className=" bg-black  h-screen fixed flex items-center w-full justify-center  ">
-      <img src={Slatylogo} className="w-[60%] sm:w-[40%] rounded-2xl " alt="slaty-logo"/>
+    <div className="bg-black h-screen fixed flex items-center w-full justify-center">
+      <img
+        src={Slatylogo}
+        className="w-[60%] sm:w-[40%] rounded-2xl"
+        alt="slaty-logo"
+      />
     </div>
   ) : (
-    <div className="App bg-black transition-all ease-in-out duration-500 px-[5%] h-full mx-auto w-full ">
-    
-      <Header/>
-    <Helmet> 
-<script src="https://static.elfsight.com/platform/platform.js" async></script></Helmet> 
+    <div className="App bg-black transition-all ease-in-out duration-500 px-[5%] h-full mx-auto w-full">
+      <Header />
+
+      <Helmet>
+        <script
+          src="https://static.elfsight.com/platform/platform.js"
+          async
+        ></script>
+      </Helmet>
+
       <Router>
         <Routes>
-         <Route path='/'>
-          <Route index element={<Home />} />
-          <Route path="waitlist" >
-          <Route index element={<Waitlist/>} />
-          <Route path="tutors" element={<TutorsWaitList/>} />
-          <Route path="students" element={<StudentWaitList/>} />
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="waitlist">
+              <Route index element={<Waitlist />} />
+              <Route path="tutors" element={<TutorsWaitList />} />
+              <Route path="students" element={<StudentWaitList />} />
+            </Route>
           </Route>
-         </Route>
         </Routes>
       </Router>
-{/*<Faq/>*/}
-<div className="fixed bottom-20 right-10">
-  <div class="elfsight-app-d2fe7d14-10ce-4b2b-86b2-9e894c9ac722" data-elfsight-app-lazy></div>
-  </div>
 
-      <Footer/>
+      <div className="fixed bottom-20 right-10">
+        <div
+          className="elfsight-app-d2fe7d14-10ce-4b2b-86b2-9e894c9ac722"
+          data-elfsight-app-lazy
+        ></div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
