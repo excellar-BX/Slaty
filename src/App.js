@@ -10,6 +10,7 @@ import TutorsWaitList from "./screens/TutorsWaitList";
 import StudentWaitList from "./screens/StudentWaitList";
 import Waitlist from "./screens/Waitlist";
 import Slatylogo from "./assets/slatylogo.jpg";
+import SEO from "./components/SEO";
 
 function App() {
   const [loading, setLoading] = useState(false);
