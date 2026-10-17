@@ -43,18 +43,73 @@ function App() {
         ></script>
       </Helmet>
 
-      <Router>
-        <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="waitlist">
-              <Route index element={<Waitlist />} />
-              <Route path="tutors" element={<TutorsWaitList />} />
-              <Route path="students" element={<StudentWaitList />} />
-            </Route>
-          </Route>
-        </Routes>
-      </Router>
+      
+<Router>
+  <Routes>
+    <Route path="/">
+      <Route
+        index
+        element={
+          <>
+            <SEO
+              title="Slaty | Study Smarter and Improve Your Grades"
+              description="Slaty helps students improve their grades with engaging learning resources, tutoring, and academic support."
+              path="/"
+            />
+            <Home />
+          </>
+        }
+      />
+
+      <Route path="waitlist">
+        <Route
+          index
+          element={
+            <>
+              <SEO
+                title="Join the Slaty Waitlist"
+                description="Join the Slaty waitlist to get updates about engaging learning resources, tutoring, and academic support."
+                path="/waitlist"
+                noindex
+              />
+              <Waitlist />
+            </>
+          }
+        />
+
+        <Route
+          path="tutors"
+          element={
+            <>
+              <SEO
+                title="Tutor Waitlist | Slaty"
+                description="Register your interest in tutoring with Slaty and get updates as the platform develops."
+                path="/waitlist/tutors"
+                noindex
+              />
+              <TutorsWaitList />
+            </>
+          }
+        />
+
+        <Route
+          path="students"
+          element={
+            <>
+              <SEO
+                title="Student Waitlist | Slaty"
+                description="Join the Slaty student waitlist for updates on learning resources, tutoring, and academic support."
+                path="/waitlist/students"
+                noindex
+              />
+              <StudentWaitList />
+            </>
+          }
+        />
+      </Route>
+    </Route>
+  </Routes>
+</Router>
 
       <div className="fixed bottom-20 right-10">
         <div
