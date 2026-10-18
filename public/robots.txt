@@ -1,5 +1,1 @@
-
-User-agent: *
-Allow: /
-
-Sitemap: https://slaty.vercel.app/sitemap.xml
+User-agent: *\nAllow: /\n\nSitemap: https://slaty.vercel.app/sitemap.xml\n
