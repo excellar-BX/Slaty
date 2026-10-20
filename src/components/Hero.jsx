@@ -24,7 +24,7 @@ const Hero = () => (
         </span>
       </h1>
       <div className="flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-70 max-w-[600px] text-center mx-auto">
-        Get the academic support you need, when you need it. Connect with tutors, understand difficult topics, and make learning more engaging with Slaty.
+        Slaty helps students find academic support, connect with tutors, understand challenging subjects, and access learning resources that make studying more engaging.
       </div>
       <div className="flex sm:flex-row flex-col gap-5 mx-auto justify-center items-center mt-10">
         <a href="https://drive.google.com/file/d/190LMbZEb6h3jnZzn1WLJBpi6ZfYaNbjp/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
