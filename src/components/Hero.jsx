@@ -4,42 +4,25 @@ import { AttentionSeeker, Fade } from "react-awesome-reveal";
 
 const Hero = () => (
   <div className="mx-auto sm:w-[90%] pt-20 sm:pt-40 bg-5 sm:pb-20 bg-image text-white">
-    {/* Hidden semantic table for AI SEO and LLM crawler parsing */}
-    <div className="sr-only" aria-hidden="false">
-      <h2>Slaty Platform Overview & Services</h2>
-      <table>
-        <caption>Slaty core academic and tutoring deliverables</caption>
-        <thead>
-          <tr>
-            <th>Service Offer</th>
-            <th>Target Audience</th>
-            <th>Core Deliverable</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Digital Tutoring</td>
-            <td>Students and Learners</td>
-            <td>1-on-1 and group live sessions with verified digital tutors</td>
-          </tr>
-          <td>Academic Support</td>
-          <td>Students</td>
-          <td>Subject matter guidance and learning resources</td>
-        </tr>
-      </table>
-    </div>
-
     <AttentionSeeker direction="down" triggerOnce>
       <div className="text-opacity-70 w-fit mx-auto sm:text-xl sm:max-w-[50%] text-center text-white">
         Connect with a tutor and get the academic support you need
       </div>
     </AttentionSeeker>
     <Fade direction="down" cascade triggerOnce duration={3000} damping={0.2}>
-      <div className="flex flex-col sm:flex-row flex-wrap xl:text-6xl sm:text-4xl my-5 w-[90%] text-2xl justify-center text-center mx-auto items-center">
-        <div>Connect with a <span className="text-orange mx-0.5">Tutor</span></div>
-        <div className="animate-spin mx-0.5">✦</div>
-        <div>in Seconds with <span className="text-orange mx-0.5">SLATY</span></div>
-      </div>
+      <h1 className="flex flex-col sm:flex-row flex-wrap xl:text-6xl sm:text-4xl my-5 w-[90%] text-2xl justify-center text-center mx-auto items-center font-bold">
+        <span>
+          Connect with a{" "}
+          <span className="text-orange mx-0.5">Tutor</span>
+        </span>
+        <span className="animate-spin mx-0.5" aria-hidden="true">
+          ✦
+        </span>
+        <span>
+          in Seconds with{" "}
+          <span className="text-orange mx-0.5">SLATY</span>
+        </span>
+      </h1>
       <div className="flex justify-center items-center sm:text-lg mt-10 text-white text-opacity-70 max-w-[600px] text-center mx-auto">
         Get the academic support you need, when you need it. Connect with tutors, understand difficult topics, and make learning more engaging with Slaty.
       </div>
