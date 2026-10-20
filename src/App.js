@@ -19,27 +19,30 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Machine-readable schema for AI search engines and LLM crawlers
   const jsonLdData = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Slaty",
-    "url": "https://slaty.vercel.app/",
-    "logo": "https://slaty.vercel.app/logo.png",
-    "description": "An educational technology platform connecting students with digital tutors and providing academic support.",
-    "serviceType": [
-      "Digital Tutoring",
-      "Academic Support",
-      "Student Mentorship"
-    ],
-    "areaServed": {
-      "@type": "Country",
-      "name": "Global"
-    },
-    "sameAs": [
-      "https://github.com/excellar-BX"
-    ]
-  };
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://slaty.vercel.app/#organization",
+  "name": "Slaty",
+  "url": "https://slaty.vercel.app/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://slaty.vercel.app/slatylogo.png"
+  },
+  "description":
+    "Slaty is an educational technology platform that helps students access tutoring, academic guidance, and engaging learning resources.",
+  "knowsAbout": [
+    "Online tutoring",
+    "Academic support",
+    "Study skills",
+    "Student learning resources",
+    "Educational technology"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Nigeria"
+  }
+};
 
   return loading ? (
     <div className="bg-black h-screen fixed flex items-center w-full justify-center">
