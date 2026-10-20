@@ -38,10 +38,6 @@ function App() {
     "Student learning resources",
     "Educational technology"
   ],
-  "areaServed": {
-    "@type": "Country",
-    "name": "Nigeria"
-  }
 };
 
   return loading ? (
