@@ -8,6 +8,7 @@ import Pricing from '../components/Pricing'
 import Reviews from '../components/Reviews'
 import Creators from '../components/Creators'
 import ProudWorks from '../components/ProudWorks'
+import Faq from "../components/Faq";
 
 const Home = () => {
   return (
