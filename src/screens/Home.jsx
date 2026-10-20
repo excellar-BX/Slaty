@@ -19,6 +19,7 @@ const Home = () => {
         <ProudWorks/>
         <Services/>
         <Pricing/>
+        <Faq/>
       {/*<Reviews/>*/}
       {/*<Creators/>*/}
     </div>
