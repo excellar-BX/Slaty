@@ -1,23 +1,57 @@
-import React from 'react'
-import Accordion from './Accordion'
-import { AttentionSeeker, Fade } from 'react-awesome-reveal'
+import React from "react";
+import Accordion from "./Accordion";
 
 const Faq = () => {
-  return (
-    <div className='text-white' >
-      <AttentionSeeker duration={2000} triggerOnce >
-    <div className=' border-spacing-3 border-opacity-10 border border-grey py-2 px-5 w-fit mx-auto rounded-full ' >Need to Know</div>
-    </AttentionSeeker>
-    <Fade direction='up' cascade damping={0.3} triggerOnce duration={2000} >
-    <div className='text-2xl sm:text-4xl xl:text-6xl font-bold text-center leading-relaxed my-10 w-fit mx-auto ' >Frequently Asked Questions</div>
-    <Accordion title='What’s included in the MVP?' text='Your MVP includes a fully functional SaaS platform built on Bubble (for the no-code plan). It features essential user flows, core functionalities, responsive design, and robust testing to ensure a seamless user experience. Think of it as your launch-ready foundation.' />
-    <Accordion title='What is the AirMedia yearly subscription?' text='The AirMedia subscription, worth $480, provides an AI social media assistant to jumpstart your marketing efforts. As part of our one-stop shop, this tool gives you a strong foundation to grow your online presence, engage your audience, and scale your business effectively—without needing extra resources or expertise.' />
-    <Accordion title='How does the 30-day timeline work?' text='We start with a strategy session and a one-day feasibility study. Then, our team designs and develops your platform using agile methods to ensure completion within 30 days. Regular updates keep you involved every step of the way.' />
-    <Accordion title='How does the payment structure work?' text='Our pricing is designed to provide flexibility while ensuring simplicity. All plans start with a minimum of two installments:  Pay in 2 Installments: Split the cost into two equal payments—50% upfront and 50% on delivery. Pay in 4, 6, or 12 Installments: If you prefer smaller payments over time, you can spread the cost further with a small incremental fee. The first payment is always made upfront, and the rest is divided into equal monthly payments. By default, you pay 50% upfront, but we offer additional flexibility to suit your financial needs. Each option is transparent, with no hidden fees, so you can focus on bringing your idea to life.' />
-    <Accordion title='Can I request changes after the project is delivered?' text={`Yes! We offer ongoing support and post-launch services to refine and scale your platform. Whether it's minor tweaks or new features, we’re here to help you grow.`} />
-    </Fade>
-    </div>
-  )
-}
+  const faqs = [
+    {
+      title: "What is Slaty?",
+      text: "Slaty is an educational platform designed to help students access tutoring, academic support, and learning resources.",
+    },
+    {
+      title: "How can Slaty help students?",
+      text: "Slaty aims to make learning more engaging by helping students understand difficult topics and find appropriate academic support.",
+    },
+    {
+      title: "Can tutors join Slaty?",
+      text: "Tutors can express their interest in joining Slaty through the tutor registration or waitlist process available on the website.",
+    },
+    {
+      title: "How can I join Slaty as a student?",
+      text: "Students can visit the student waitlist page to register their interest and receive updates about Slaty.",
+    },
+    {
+      title: "Is Slaty available in Nigeria?",
+      text: "Slaty is focused on helping students access academic support. Check the website for the latest information about availability and supported services.",
+    },
+  ];
 
-export default Faq 
+  return (
+    <section
+      className="text-white py-16 mx-auto max-w-4xl"
+      aria-labelledby="faq-heading"
+    >
+      <p className="text-center text-orange mb-3">
+        Need to Know
+      </p>
+
+      <h2
+        id="faq-heading"
+        className="text-2xl sm:text-4xl font-bold text-center my-8"
+      >
+        Frequently Asked Questions About Slaty
+      </h2>
+
+      <div className="space-y-4">
+        {faqs.map((faq) => (
+          <Accordion
+            key={faq.title}
+            title={faq.title}
+            text={faq.text}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Faq;
