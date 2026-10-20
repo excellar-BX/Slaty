@@ -19,6 +19,28 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Machine-readable schema for AI search engines and LLM crawlers
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Slaty",
+    "url": "https://slaty.vercel.app/",
+    "logo": "https://slaty.vercel.app/logo.png",
+    "description": "An educational technology platform connecting students with digital tutors and providing academic support.",
+    "serviceType": [
+      "Digital Tutoring",
+      "Academic Support",
+      "Student Mentorship"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Global"
+    },
+    "sameAs": [
+      "https://github.com/excellar-BX"
+    ]
+  };
+
   return loading ? (
     <div className="bg-black h-screen fixed flex items-center w-full justify-center">
       <img src={Slatylogo} className="w-[60%] sm:w-[40%] rounded-2xl" alt="Slaty logo" />
@@ -26,11 +48,28 @@ function App() {
   ) : (
     <div className="App bg-black transition-all ease-in-out duration-500 px-[5%] h-full mx-auto w-full">
       <Header />
-      <Helmet><script src="https://static.elfsight.com/platform/platform.js" async /></Helmet>
+      <Helmet>
+        <script src="https://static.elfsight.com/platform/platform.js" async />
+      </Helmet>
       <Router>
         <Routes>
           <Route path="/">
-            <Route index element={<><SEO title="Connect with a Tutor in Seconds | Slaty" description="Get the academic support you need, when you need it. Connect with tutors, understand difficult topics, and make learning more engaging with Slaty." path="/" /><Home /></>} />
+            <Route index element={
+              <>
+                <SEO 
+                  title="Connect with a Tutor in Seconds | Slaty" 
+                  description="Get the academic support you need, when you need it. Connect with tutors, understand difficult topics, and make learning more engaging with Slaty." 
+                  path="/" 
+                />
+                <Helmet>
+                  {/* JSON-LD Structured Data Injection for AI SEO */}
+                  <script type="application/ld+json">
+                    {JSON.stringify(jsonLdData)}
+                  </script>
+                </Helmet>
+                <Home />
+              </>
+            } />
             <Route path="waitlist">
               <Route index element={<><SEO title="Join the Slaty Waitlist" description="Join the Slaty waitlist for updates about learning resources, tutoring, and academic support." path="/waitlist" noindex /><Waitlist /></>} />
               <Route path="tutors" element={<><SEO title="Tutor Waitlist | Slaty" description="Register your interest in tutoring with Slaty and get updates as the platform develops." path="/waitlist/tutors" noindex /><TutorsWaitList /></>} />
