@@ -1,1 +1,18 @@
-User-agent: *\nAllow: /\n\nSitemap: https://slaty.vercel.app/sitemap.xml\n
+# public/robots.txt
+User-agent: *
+Allow: /
+
+# Specifically invite AI Search & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://slaty.vercel.app/sitemap.xml
