@@ -10,6 +10,8 @@ import StudentWaitList from "./screens/StudentWaitList";
 import Waitlist from "./screens/Waitlist";
 import Slatylogo from "./assets/slatylogo.jpg";
 import SEO from "./components/SEO";
+import OnlineTutoring from "./screens/OnlineTutoring";
+import BecomeATutor from "./screens/BecomeATutor";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -20,25 +22,25 @@ function App() {
   }, []);
 
   const jsonLdData = {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "@id": "https://slaty.vercel.app/#organization",
-  "name": "Slaty",
-  "url": "https://slaty.vercel.app/",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://slaty.vercel.app/slatylogo.png"
-  },
-  "description":
-    "Slaty is an educational technology platform that helps students access tutoring, academic guidance, and engaging learning resources.",
-  "knowsAbout": [
-    "Online tutoring",
-    "Academic support",
-    "Study skills",
-    "Student learning resources",
-    "Educational technology"
-  ],
-};
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": "https://slaty.vercel.app/#organization",
+    "name": "Slaty",
+    "url": "https://slaty.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://slaty.vercel.app/slatylogo.png"
+    },
+    "description":
+      "Slaty is an educational technology platform that helps students access tutoring, academic guidance, and engaging learning resources.",
+    "knowsAbout": [
+      "Online tutoring",
+      "Academic support",
+      "Study skills",
+      "Student learning resources",
+      "Educational technology"
+    ],
+  };
 
   return loading ? (
     <div className="bg-black h-screen fixed flex items-center w-full justify-center">
@@ -52,6 +54,7 @@ function App() {
       </Helmet>
       <Router>
         <Routes>
+          {/* Homepage Route */}
           <Route path="/">
             <Route index element={
               <>
@@ -69,6 +72,30 @@ function App() {
                 <Home />
               </>
             } />
+
+            {/* New Routes */}
+            <Route path="online-tutoring" element={
+              <>
+                <SEO 
+                  title="Online Tutoring Services | Slaty" 
+                  description="Access expert online tutoring and personalized academic support on Slaty." 
+                  path="/online-tutoring" 
+                />
+                <OnlineTutoring />
+              </>
+            } />
+            <Route path="become-a-tutor" element={
+              <>
+                <SEO 
+                  title="Become a Tutor | Slaty" 
+                  description="Share your knowledge, mentor students, and start tutoring online with Slaty." 
+                  path="/become-a-tutor" 
+                />
+                <BecomeATutor />
+              </>
+            } />
+
+            {/* Waitlist Routes */}
             <Route path="waitlist">
               <Route index element={<><SEO title="Join the Slaty Waitlist" description="Join the Slaty waitlist for updates about learning resources, tutoring, and academic support." path="/waitlist" noindex /><Waitlist /></>} />
               <Route path="tutors" element={<><SEO title="Tutor Waitlist | Slaty" description="Register your interest in tutoring with Slaty and get updates as the platform develops." path="/waitlist/tutors" noindex /><TutorsWaitList /></>} />
@@ -82,4 +109,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
