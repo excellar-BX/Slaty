@@ -63,8 +63,8 @@ export default function BecomeATutor() {
         <p className="mb-8 text-lg leading-8 text-white/80">
           Great tutors make difficult ideas easier to understand. Slaty is building a learning platform that helps students connect with academic support—and invites interested tutors to register for updates.
         </p>
-        <Link to="/waitlist/tutors" className="inline-block rounded-lg bg-orange px-6 py-3 font-semibold text-black">
-          Join the tutor waitlist
+        <Link to="https://docs.google.com/forms/d/e/1FAIpQLSdZYzOU5Gri3AiOXn_WkT8zTG9sXRqT9fnbSTeZCZ9U4ZBV4Q/viewform" className="inline-block rounded-lg bg-orange px-6 py-3 font-semibold text-black">
+          Join SLATY as tutor
         </Link>
       </header>
 
@@ -105,7 +105,7 @@ export default function BecomeATutor() {
       <section className="mt-16 rounded-2xl border border-white/15 p-8">
         <h2 className="mb-3 text-2xl font-bold">Interested in teaching with Slaty?</h2>
         <p className="mb-6 leading-7 text-white/75">Register your interest and follow updates about tutor onboarding.</p>
-        <Link to="/waitlist/tutors" className="font-semibold text-orange underline">Join the tutor waitlist</Link>
+        <Link to="https://docs.google.com/forms/d/e/1FAIpQLSdZYzOU5Gri3AiOXn_WkT8zTG9sXRqT9fnbSTeZCZ9U4ZBV4Q/viewform" className="font-semibold text-orange underline">Join SLATY as a Tutor</Link>
       </section>
     </main>
   );
