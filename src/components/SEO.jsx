@@ -2,10 +2,10 @@ import { Helmet } from "react-helmet";
 
 const SITE_URL = "https://slaty.vercel.app";
 const DEFAULT_DESCRIPTION =
-  "Slaty helps students connect with tutors, get academic support, and learn with confidence.";
+  "Slaty connects learners with tutors for academic subjects and practical tech skills, helping them build knowledge, confidence, and career-ready skills.";
 
 export default function SEO({
-  title = "Slaty | Online Tutoring in Nigeria",
+  title = "Slaty | Online Tutoring & Tech Skills Learning",
   description = DEFAULT_DESCRIPTION,
   path = "/",
   image = "/slatylogo.png",
