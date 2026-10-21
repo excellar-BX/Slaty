@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BiMenuAltRight, BiUpArrowAlt, BiX } from 'react-icons/bi';
 import OutsideClickHandler from 'react-outside-click-handler';
