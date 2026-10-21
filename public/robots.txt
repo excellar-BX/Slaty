@@ -1,8 +1,6 @@
-# public/robots.txt
 User-agent: *
 Allow: /
 
-# Specifically invite AI Search & LLM Crawlers
 User-agent: GPTBot
 Allow: /
 
