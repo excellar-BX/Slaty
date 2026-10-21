@@ -22,25 +22,36 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const jsonLdData = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "@id": "https://slaty.vercel.app/#organization",
-    "name": "Slaty",
-    "url": "https://slaty.vercel.app/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://slaty.vercel.app/slatylogo.png"
-    },
-    "description":
-      "Slaty is an educational technology platform that helps students access tutoring, academic guidance, and engaging learning resources.",
-    "knowsAbout": [
-      "Online tutoring",
-      "Academic support",
-      "Study skills",
-      "Student learning resources",
-      "Educational technology"
-    ],
+  const organizationSchema = { 
+    "@context": "https://schema.org", 
+    "@type": "EducationalOrganization", 
+    "@id": "https://slaty.vercel.app/#organization", 
+    "name": "Slaty", 
+    "url": "https://slaty.vercel.app/", 
+    "logo": { 
+      "@type": "ImageObject", 
+      "url": "https://slaty.vercel.app/slatylogo.png" 
+    }, 
+    "description": "Slaty helps students in Nigeria connect with tutors, access academic support, and make learning more engaging.", 
+    "knowsAbout": [ 
+      "Online tutoring", 
+      "Academic support", 
+      "Study skills", 
+      "Student learning resources", 
+      "Educational technology" 
+    ] 
+  }; 
+
+  const websiteSchema = { 
+    "@context": "https://schema.org", 
+    "@type": "WebSite", 
+    "@id": "https://slaty.vercel.app/#website", 
+    "url": "https://slaty.vercel.app/", 
+    "name": "Slaty", 
+    "inLanguage": "en-NG", 
+    "publisher": { 
+      "@id": "https://slaty.vercel.app/#organization" 
+    } 
   };
 
   return loading ? (
@@ -68,7 +79,7 @@ function App() {
                 <Helmet>
                   {/* JSON-LD Structured Data Injection for AI SEO */}
                   <script type="application/ld+json">
-                    {JSON.stringify(jsonLdData)}
+                    {JSON.stringify([organizationSchema, websiteSchema])}
                   </script>
                 </Helmet>
                 <Home />
