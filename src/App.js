@@ -12,6 +12,7 @@ import Slatylogo from "./assets/slatylogo.jpg";
 import SEO from "./components/SEO";
 import OnlineTutoring from "./screens/OnlineTutoring";
 import BecomeATutor from "./screens/BecomeATutor";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(false);
