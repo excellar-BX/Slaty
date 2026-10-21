@@ -54,6 +54,7 @@ function App() {
         <script src="https://static.elfsight.com/platform/platform.js" async />
       </Helmet>
       <Router>
+        <ScrollToTop />
         <Routes>
           {/* Homepage Route */}
           <Route path="/">
