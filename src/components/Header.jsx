@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <div className="flex w-full sm:max-w-[90%] text-white mx-auto pt-5 mb-5 justify-center">
-      <div className="flex items-center z-[1000] justify-between fixed rounded-full bg-black py-3 sm:py-5 px-5 sm:px-10 w-[95%] sm:max-w-[75%] border-spacing-3 border-opacity-10 border border-grey">
+      <div className="flex items-center z-[1000] justify-between fixed rounded-full bg-black py-3 sm:py-5 px-5 sm:px-10 w-[95%] sm:max-w-[85%] xl:max-w-[90%] border-spacing-3 border-opacity-10 border border-grey">
 
         <RouterLink to="/" onClick={closeMenu}>
           <div className="min-w-[20%] text-orange tracking-widest text-xl sm:text-2xl xl:text-3xl font-bold cursor-pointer">
@@ -31,7 +31,7 @@ const Header = () => {
         <nav
           className={`${
             navOpen ? 'scale-100' : 'xl:scale-100 scale-0'
-          } transition-all flex ease-in-out duration-700 flex-1 xl:flex-row flex-col items-center xl:bg-opacity-0 xl:static absolute top-20 xl:py-0 py-8 rounded-2xl right-6 bg-orange xl:max-w-auto w-[250px] xl:h-auto h-auto text-center text-base xl:text-lg justify-between`}
+          } transition-all flex ease-in-out duration-700 flex-1 xl:flex-row flex-col items-center xl:bg-opacity-0 xl:static absolute top-20 xl:py-0 py-8 rounded-2xl right-6 bg-orange xl:max-w-auto w-[250px] xl:h-auto h-auto text-center text-base xl:text-sm 2xl:text-base justify-between`}
         >
           <div className="w-10 h-10 rounded-md rotate-45 xl:hidden bg-orange absolute right-2 -top-3" />
 
@@ -69,7 +69,7 @@ const Header = () => {
                 onClick={closeMenu}
                 className="mx-3 hover:text-white text-white/80 transition"
               >
-                Become a Tutor
+                Become A Tutor
               </RouterLink>
             </li>
           </ul>
@@ -79,18 +79,17 @@ const Header = () => {
             target="_blank"
             rel="noreferrer"
             onClick={closeMenu}
+            className="bg-white bg-opacity-10 flex items-center justify-center mt-5 xl:my-0 rounded-lg h-12 w-[90%] xl:w-auto xl:px-4 px-4 border-spacing-3 border-opacity-10 border cursor-pointer border-grey"
           >
-            <div className="bg-white bg-opacity-10 flex items-center justify-center mt-5 xl:my-0 rounded-lg h-12 w-[90%] xl:w-auto xl:px-5 px-4 border-spacing-3 border-opacity-10 border cursor-pointer border-grey">
-              Apply Now
-              <BiUpArrowAlt className="rotate-45 text-3xl ml-1" />
-            </div>
+            <span className="whitespace-nowrap">Become A Tutor</span>
+            <BiUpArrowAlt className="rotate-45 text-3xl ml-1 shrink-0" />
           </a>
         </nav>
 
-        <OutsideClickHandler onOutsideClick={() => setNavOpen(false)}>
+        <OutsideClickHandler onOutsideClick={closeMenu}>
           <div className="menu xl:hidden block text-3xl cursor-pointer">
             {navOpen ? (
-              <BiX onClick={() => setNavOpen(false)} />
+              <BiX onClick={closeMenu} />
             ) : (
               <BiMenuAltRight onClick={() => setNavOpen(true)} />
             )}
