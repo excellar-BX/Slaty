@@ -13,6 +13,7 @@ import SEO from "./components/SEO";
 import OnlineTutoring from "./screens/OnlineTutoring";
 import BecomeATutor from "./screens/BecomeATutor";
 import ScrollToTop from "./components/ScrollToTop";
+import TechSkills from "./screens/TechSkills";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -86,6 +87,7 @@ function App() {
             {/* Cleaned-up Routes */}
             <Route path="online-tutoring" element={<OnlineTutoring />} />
             <Route path="become-a-tutor" element={<BecomeATutor />} />
+            <Route path="/tech-skills" element={<TechSkills />} />
 
             {/* Waitlist Routes */}
             <Route path="waitlist">
