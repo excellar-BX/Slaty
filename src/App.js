@@ -75,27 +75,9 @@ function App() {
               </>
             } />
 
-            {/* New Routes */}
-            <Route path="online-tutoring" element={
-              <>
-                <SEO 
-                  title="Online Tutoring Services | Slaty" 
-                  description="Access expert online tutoring and personalized academic support on Slaty." 
-                  path="/online-tutoring" 
-                />
-                <OnlineTutoring />
-              </>
-            } />
-            <Route path="become-a-tutor" element={
-              <>
-                <SEO 
-                  title="Become a Tutor | Slaty" 
-                  description="Share your knowledge, mentor students, and start tutoring online with Slaty." 
-                  path="/become-a-tutor" 
-                />
-                <BecomeATutor />
-              </>
-            } />
+            {/* Cleaned-up Routes */}
+            <Route path="online-tutoring" element={<OnlineTutoring />} />
+            <Route path="become-a-tutor" element={<BecomeATutor />} />
 
             {/* Waitlist Routes */}
             <Route path="waitlist">
