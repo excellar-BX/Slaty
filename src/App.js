@@ -32,13 +32,15 @@ function App() {
       "@type": "ImageObject", 
       "url": "https://slaty.vercel.app/slatylogo.png" 
     }, 
-    "description": "Slaty helps students in Nigeria connect with tutors, access academic support, and make learning more engaging.", 
+    "description": "Slaty is a learning platform that connects learners with tutors for academic subjects and practical technology skills.", 
     "knowsAbout": [ 
       "Online tutoring", 
-      "Academic support", 
-      "Study skills", 
-      "Student learning resources", 
-      "Educational technology" 
+      "Academic learning", 
+      "Technology skills training", 
+      "Programming", 
+      "Web development", 
+      "Digital skills", 
+      "Personalized learning" 
     ] 
   }; 
 
@@ -72,16 +74,11 @@ function App() {
             <Route index element={
               <>
                 <SEO 
-                  title="Connect with a Tutor in Seconds | Slaty" 
-                  description="Get the academic support you need, when you need it. Connect with tutors, understand difficult topics, and make learning more engaging with Slaty." 
+                  title="Slaty | Online Tutoring & Tech Skills Learning in Nigeria" 
+                  description="Learn academic subjects and practical technology skills with Slaty. Connect with tutors, strengthen your knowledge, and develop skills for your future." 
                   path="/" 
+                  structuredData={[organizationSchema, websiteSchema]}
                 />
-                <Helmet>
-                  {/* JSON-LD Structured Data Injection for AI SEO */}
-                  <script type="application/ld+json">
-                    {JSON.stringify([organizationSchema, websiteSchema])}
-                  </script>
-                </Helmet>
                 <Home />
               </>
             } />
