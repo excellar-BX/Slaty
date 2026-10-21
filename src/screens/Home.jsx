@@ -22,7 +22,7 @@ const Home = () => {
         <Pricing/>
         <Faq/>
         
-<section className="mx-auto w-full max-w-6xl py-16 text-white">
+<section className="mx-auto my-12 w-full max-w-6xl rounded-3xl bg-gray-900 px-6 py-16 text-white">
   <div className="mb-10 text-center">
     <h2 className="text-3xl font-bold sm:text-4xl">
       Explore Slaty
