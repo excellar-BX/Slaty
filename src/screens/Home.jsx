@@ -28,7 +28,7 @@ const Home = () => {
       Explore Slaty
     </h2>
     <p className="mx-auto mt-4 max-w-2xl text-white/70">
-      Whether you need academic support or want to help
+      Whether you need academic support, practical tech skills, or want to help
       students learn, Slaty has a place for you.
     </p>
   </div>
@@ -42,12 +42,20 @@ const Home = () => {
         Discover how Slaty helps students connect with tutors,
         understand difficult subjects, and get academic support.
       </p>
-      <Link
-        to="/online-tutoring"
-        className="mt-6 inline-block rounded-lg bg-orange px-5 py-3 font-semibold text-black"
-      >
-        Explore Tutoring →
-      </Link>
+      <div className="mt-6 flex flex-wrap gap-4">
+        <Link
+          to="/online-tutoring"
+          className="inline-block rounded-lg bg-orange px-5 py-3 font-semibold text-black"
+        >
+          Explore Tutoring →
+        </Link>
+        <Link
+          to="/tech-skills"
+          className="inline-block rounded-lg border border-orange px-5 py-3 font-semibold text-orange transition hover:bg-orange hover:text-black"
+        >
+          Explore Tech Skills →
+        </Link>
+      </div>
     </article>
 
     <article className="rounded-2xl border border-white/15 p-6 sm:p-8">
